@@ -1,0 +1,6 @@
+[submodule ".config/yazi/plugins/fast-enter.yazi"]
+	path = .config/yazi/plugins/fast-enter.yazi
+	url = git@github.com:ourongxing/fast-enter.yazi.git
+[submodule ".config/yazi/plugins/yatline.yazi"]
+	path = .config/yazi/plugins/yatline.yazi
+	url = git@github.com:handy-sun/yatline.yazi.git
