@@ -1,0 +1,63 @@
+{
+	"suggest.autoTrigger": "always",
+	"suggest.noselect": true,
+	"suggest.timeout": 5000,
+
+	"signature.target": "echo",
+
+	"diagnostic.enable": true,
+	"inlayHint.enable": false,
+	"clangd.fallbackFlags": [ "-std=c++17" ],
+	"languageserver": {
+		"cmake": {
+			"command": "cmake-language-server",
+			"filetypes": [
+				"cmake"
+			],
+			"rootPatterns": [
+				"build/"
+			],
+			"initializationOptions": {
+				"buildDirectory": "build"
+			}
+		},
+		"ccls": {
+			"command": "ccls",
+			"filetypes": ["c", "cpp", "cuda", "objc", "objcpp", "cc"],
+			"rootPatterns": [".ccls-root", "compile_commands.json"],
+			"initializationOptions": {
+				"cache": {
+					"directory": "~/.cache/ccls"
+				},
+				"client": {
+					"snippetSupport": true
+				}
+			}
+		},
+		"vimls": {
+			"module": "~/.config/coc/extensions/node_modules/coc-vimlsp/out/index.js",
+			"args": ["--node-ipc"],
+			"initializationOptions": {
+				"isNeovim": true,
+				"iskeyword": "@,48-57,_,192-255,-#",
+				"vimruntime": "",
+				"runtimepath": "",
+				"diagnostic": {
+					"enable": true
+				},
+				"indexes": {
+					"runtimepath": true,
+					"gap": 100,
+					"count": 3,
+					"projectRootPatterns" : ["strange-root-pattern", ".git", "autoload", "plugin"]
+				},
+				"suggest": {
+					"fromVimruntime": true,
+					"fromRuntimepath": false
+				}
+			},
+			"filetypes": [ "vim" ]
+		}
+  },
+  "snippets.ultisnips.pythonPrompt": false
+}
