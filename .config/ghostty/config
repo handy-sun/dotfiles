@@ -1,0 +1,79 @@
+# theme = catppuccin-mocha
+background-opacity = 0.96
+font-family = NotoMono Nerd Font Mono
+font-size = 16
+# cursor-style = block
+cursor-style-blink = false
+cursor-invert-fg-bg = true
+mouse-hide-while-typing = true
+scrollback-limit = 15000
+
+# macOS 专属设置
+macos-titlebar-style = tabs
+macos-option-as-alt = true
+## only supported on macOS?
+background-blur-radius = 5
+
+# 窗口控制
+confirm-close-surface = true
+window-title-font-family = NotoMono Nerd Font Mono
+window-decoration = true
+window-padding-x = 2
+window-padding-y = 2
+window-padding-balance = true
+window-save-state = always
+
+# 自动更新设置
+# auto-update = download
+auto-update-channel = stable
+
+# 附加功能
+shell-integration-features = true
+copy-on-select = clipboard
+focus-follows-mouse = true
+link-url = true
+
+## Mouse Right button paste
+right-click-action = paste
+## keybindings
+keybind = super+r=reload_config
+keybind = super+i=inspector:toggle
+keybind = super+f=toggle_fullscreen
+keybind = super+left=previous_tab
+keybind = super+right=next_tab
+
+# 快速终端 (全局快捷键)
+keybind = global:super+grave_accent=toggle_quick_terminal
+
+# tmux style
+keybind = super+b>x=close_surface
+keybind = super+b>c=new_tab
+keybind = super+b>n=new_window
+keybind = super+b>f=toggle_fullscreen
+
+# 标签页导航
+keybind = super+ctrl>1=goto_tab:1
+keybind = super+ctrl>2=goto_tab:2
+keybind = super+ctrl>3=goto_tab:3
+keybind = super+ctrl>4=goto_tab:4
+keybind = super+ctrl>5=goto_tab:5
+keybind = super+ctrl>6=goto_tab:6
+keybind = super+ctrl>7=goto_tab:7
+keybind = super+ctrl>8=goto_tab:8
+keybind = super+ctrl>9=goto_tab:9
+
+## Split window
+keybind = super+ctrl>\=new_split:right
+keybind = super+ctrl>-=new_split:down
+keybind = super+ctrl>e=equalize_splits
+keybind = super+ctrl>z=toggle_split_zoom
+
+##
+keybind = super+ctrl>h=goto_split:left
+keybind = super+ctrl>j=goto_split:bottom
+keybind = super+ctrl>k=goto_split:top
+keybind = super+ctrl>l=goto_split:right
+keybind = super+ctrl>left=goto_split:left
+keybind = super+ctrl>down=goto_split:bottom
+keybind = super+ctrl>up=goto_split:top
+keybind = super+ctrl>right=goto_split:right
