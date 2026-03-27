@@ -19,6 +19,10 @@ edit = [
 open = [
     { run = 'xdg-open "$@"', desc = "Open" },
 ]
+extract = [
+	{ run = 'ouch d -y %*', desc = "Extract here with ouch", for = "windows" },
+	{ run = 'ouch d -y "$@"', desc = "Extract here with ouch", for = "unix" },
+]
 
 [open]
 rules = [
@@ -44,4 +48,5 @@ prepend_fetchers = [
 ]
 prepend_previewers = [
     { url = '**/.git/', run = 'preview-git' },
+    { mime = "application/{*zip,tar,bzip2,7z*,rar,xz,zstd,java-archive}", run  = "ouch" },
 ]

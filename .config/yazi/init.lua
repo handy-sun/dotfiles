@@ -1,9 +1,6 @@
 th.git = th.git or {}
 th.git.modified = ui.Style():fg('blue')
 th.git.deleted = ui.Style():fg('red'):bold()
--- th.git.untracked = ui.Style():fg("yellow")
--- th.git.ignored = ui.Style():fg("brightblack")
--- th.git.unknown_sign = "?"
 th.git.added_sign = 'A'
 th.git.modified_sign = 'M'
 th.git.deleted_sign = 'D'
@@ -13,6 +10,7 @@ require('git'):setup({ order = 0 })
 -- ============== split plugin ==============
 local mocha_light = '#89b4f9'
 local mocha_black = '#323344'
+
 require('yatline'):setup({
 	style_a = {
 		bg = mocha_light,
