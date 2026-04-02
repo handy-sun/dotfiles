@@ -40,8 +40,8 @@ keybind = ctrl+insert=copy_to_clipboard
 keybind = super+r=reload_config
 keybind = super+i=inspector:toggle
 keybind = super+f=toggle_fullscreen
-keybind = super+ctrl>left=previous_tab
-keybind = super+ctrl>right=next_tab
+keybind = super+[=previous_tab
+keybind = super+]=next_tab
 
 # 快速终端 (全局快捷键)
 keybind = global:super+grave_accent=toggle_quick_terminal
