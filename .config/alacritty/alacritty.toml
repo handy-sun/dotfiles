@@ -1,39 +1,36 @@
-# from theme: Tango Dark(tango_dark.toml) [begin]
+## My MobaXterm theme's colors [begin]
 [colors.primary]
-background = '#2e3436'
-foreground = '#d3d7cf'
+background = '#343d46'
+foreground = '#D8DEE9'
 
 [colors.normal]
-black = '#2e3436'
-red = '#cc0000'
-green = '#4e9a06'
-yellow = '#c4a000'
-blue = '#3465a4'
-magenta = '#75507b'
-cyan = '#06989a'
-white = '#d3d7cf'
+black = '#1E1E1E'
+red = '#EC5F66'
+green = '#99C794'
+yellow = '#F9AE58'
+blue = '#6699CC'
+magenta = '#C695C6'
+cyan = '#5FB4B4'
+white = '#F7F7F7'
 
 [colors.bright]
-black = '#555753'
-red = '#ef2929'
-green = '#8ae234'
-yellow = '#fce94f'
-blue = '#729fcf'
-magenta = '#ad7fa8'
-cyan = '#34e2e2'
-white = '#eeeeec'
-# from theme: Tango Dark(tango_dark.toml) [end]
+black = '#B4B4A6'
+red = '#F97B58'
+green = '#ACD1A8'
+yellow = '#FAC761'
+blue = '#85ADD6'
+magenta = '#D8B6D8'
+cyan = '#82C4C4'
+white = '#FAFAFA'
+## My MobaXterm theme's colors [end]
 
 [bell]
 animation = "EaseOutExpo"
-color = "0xffffff"
+color = "0xFF0000"
 duration = 0
 
 [cursor]
 vi_mode_style = "None"
-
-[env]
-TERM = "xterm-256color"
 
 [font]
 size = 16
@@ -47,6 +44,46 @@ family = "NotoMono NFM"
 [font.normal]
 family = "NotoMono NFM"
 style = "Regular"
+
+[scrolling]
+history = 15000
+multiplier = 5
+
+[window]
+## only MacOS support: "Transparent" | "Buttonless"
+decorations = "None"
+dynamic_padding = true
+dynamic_title = true
+opacity = 0.96
+startup_mode = "Maximized"
+
+[window.dimensions]
+columns = 0
+lines = 0
+
+[window.padding]
+x = 0
+y = 0
+
+[general]
+live_config_reload = true
+
+[selection]
+semantic_escape_chars = ",│`|:\"'()[]{}<>"
+save_to_clipboard = true
+
+[mouse]
+hide_when_typing = false
+
+[[mouse.bindings]]
+action = "PasteSelection"
+mods = "Control"
+mouse = "Right"
+
+[[mouse.bindings]]
+## CopySelection in Linux/BSD exclusive
+action = "Copy"
+mouse = "Left"
 
 [[keyboard.bindings]]
 action = "SpawnNewInstance"
@@ -565,41 +602,3 @@ mods = "Super"
 chars = "\u001B[24;3~"
 key = "F12"
 mods = "Super"
-
-[mouse]
-hide_when_typing = false
-
-[[mouse.bindings]]
-action = "PasteSelection"
-mods = "Control"
-mouse = "Right"
-
-[[mouse.bindings]]
-action = "PasteSelection"
-mouse = "Middle"
-
-[scrolling]
-history = 15000
-multiplier = 5
-
-[terminal.shell]
-args = ["-l", "-i"]
-program = "/usr/local/bin/fish"
-
-[window]
-decorations = "Full"
-dynamic_padding = true
-dynamic_title = true
-opacity = 0.96
-startup_mode = "Maximized"
-
-[window.dimensions]
-columns = 0
-lines = 0
-
-[window.padding]
-x = 0
-y = 0
-
-[general]
-live_config_reload = true
