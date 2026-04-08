@@ -1,18 +1,16 @@
-command = /run/current-system/sw/bin/fish -l -i
-# theme = catppuccin-mocha
-background-opacity = 0.98
+theme = Catppuccin Frappe
+background-opacity = 0.96
 font-family = NotoMono Nerd Font Mono
 font-size = 16
 # cursor-style = block
 cursor-style-blink = false
 cursor-invert-fg-bg = true
 mouse-hide-while-typing = true
-scrollback-limit = 20000
+scrollback-limit = 9000
 
-# macOS 专属设置
+## only supported on macOS?
 macos-titlebar-style = tabs
 macos-option-as-alt = true
-## only supported on macOS?
 background-blur-radius = 3
 
 # 窗口控制
