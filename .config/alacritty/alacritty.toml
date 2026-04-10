@@ -36,13 +36,13 @@ vi_mode_style = "None"
 size = 16
 
 [font.bold]
-family = "NotoMono NFM"
+family = "NotoMono Nerd Font Mono"
 
 [font.italic]
-family = "NotoMono NFM"
+family = "NotoMono Nerd Font Mono"
 
 [font.normal]
-family = "NotoMono NFM"
+family = "NotoMono Nerd Font Mono"
 style = "Regular"
 
 [scrolling]
@@ -77,7 +77,7 @@ hide_when_typing = false
 
 [[mouse.bindings]]
 action = "PasteSelection"
-mods = "Control"
+# mods = "Control"
 mouse = "Right"
 
 [[mouse.bindings]]
