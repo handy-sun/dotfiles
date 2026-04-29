@@ -1,0 +1,52 @@
+address: 0.0.0.0
+port: 1282
+
+# 目录配置
+directory: /var/www/webdav
+
+# 默认权限（只读）
+permissions: R
+
+# 用户配置
+users:
+  - username: admin
+    password: "{bcrypt}$2a$14$JNQ4jKZyoRz8aNYuB.3TKOfoBfIVpQjhZNmwxhFvNCf5Ag15owAGO"
+    permissions: CRUD
+
+# 日志配置
+log:
+  format: console
+  colors: true
+  outputs:
+    - stderr
+
+# CORS 配置（可选，根据需要调整）
+cors:
+  enabled: true
+  credentials: true
+  allowed_hosts:
+    - "*"
+  allowed_headers:
+    - Authorization
+    - Content-Type
+    - Depth
+    - Destination
+    - If
+    - Lock-Token
+    - Overwrite
+    - TimeOut
+    - Translate
+  allowed_methods:
+    - COPY
+    - DELETE
+    - GET
+    - HEAD
+    - LOCK
+    - UNLOCK
+    - MKCOL
+    - MOVE
+    - OPTIONS
+    - POST
+    - PROPFIND
+    - PROPPATCH
+    - PUT
