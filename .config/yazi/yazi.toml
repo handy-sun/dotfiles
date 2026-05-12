@@ -2,7 +2,6 @@
 ratio = [1, 4, 5]
 show_hidden = true
 scrolloff = 6
-# linemode = "size"
 
 [preview]
 wrap = "yes"
@@ -20,8 +19,9 @@ open = [
     { run = 'xdg-open "$@"', desc = "Open" },
 ]
 extract = [
-	{ run = 'ouch d -y %*', desc = "Extract here with ouch", for = "windows" },
-	{ run = 'ouch d -y "$@"', desc = "Extract here with ouch", for = "unix" },
+    { run = 'ouch d -y %*', desc = "Extract here with ouch(Windows)", for = "windows" },
+    { run = 'ouch d -y "$@"', desc = "Extract here with ouch(Linux)", for = "linux" },
+    { run = "ya pub extract --list %s", desc = "Extract here with ouch(MacOS)", for = "macos" },
 ]
 
 [open]
@@ -29,7 +29,6 @@ rules = [
     { mime = "text/*", use = "edit" },
     { mime = "video/*", use = "play" },
     { mime = "audio/*", use = "play" },
-#     { name = "*.html", use = [ "open", "edit" ] },
 ]
 prepend_rules = [
     { url = "*.json", use = "edit" },
