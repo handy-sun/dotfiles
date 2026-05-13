@@ -310,3 +310,87 @@ ESC 字符是许多 ANSI 转义序列的开始标志。这些序列告诉终端�
 - 启用鼠标支持，但保留快速开关。
 - 让状态栏和标题栏更实用，优先显示当前会话、pane、TTY、用户、主机和时间信息。
 - 兼顾 SSH 场景下的环境变量更新，减少 agent 转发失效问题。
+
+### 与 `archibate/tmux-conf` 的整合方案
+
+最近评估了一次 [archibate/tmux-conf](https://github.com/archibate/tmux-conf) 这套配置，目标不是整份照搬，而是只吸收它的 TPM 插件能力和一部分快捷键，同时不覆盖我自己已经稳定使用的前缀键与核心操作方式。
+
+#### 当前约束
+
+- `expnix` 里原本不是用 Home Manager 的 `programs.tmux` 管理 tmux，而是直接把本仓库中的 `tmux/tmux.conf` 链接到 `~/.config/tmux/tmux.conf`。
+- 现有个人习惯已经固定：
+  - 前缀键是 `Ctrl+s`
+  - `prefix + /` 用来快速横向分屏
+  - `prefix + m` / `prefix + M` 用来切换鼠标
+  - `prefix + r` 用来重新加载配置
+  - `prefix + h/j/k/l` 用来切换 pane
+
+这意味着不能直接 source 上游仓库的 `tmux.conf`，否则一定会覆盖已有绑定。
+
+#### 为什么要迁移到 `programs.tmux`
+
+如果只是把上游 `tmux.conf` 再次 `source` 进来，会有几个问题：
+
+- 插件安装仍依赖 TPM 自己的 bootstrap，和 Nix 的声明式管理不一致。
+- 键位冲突会变得隐蔽，后续难判断到底是谁覆盖了谁。
+- 插件、额外配置、主配置会散落在多个文件和多个仓库里，不利于维护。
+
+更稳妥的做法是：
+
+- 用 Home Manager 的 `programs.tmux` 统一生成 `~/.config/tmux/tmux.conf`
+- 用 `programs.tmux.plugins` 声明插件
+- 用 `extraConfig` 保留我自己的主键位和状态栏设置
+- 只增量引入上游仓库里低冲突的插件和快捷键
+
+#### 上游插件可迁移性
+
+`archibate/tmux-conf` 里用到的插件里，大部分在 `nixpkgs` 的 `pkgs.tmuxPlugins` 下已经有现成包：
+
+- `tmux-sensible`
+- `tmux-yank`
+- `tmux-open`
+- `tmux-copycat`
+- `tmux-resurrect`
+- `tmux-continuum`
+- `tmux-sidebar`
+- `tmux-which-key`
+- `tmux-mode-indicator`
+
+因此不需要把 TPM 自身也带进来，更不需要保留 `run '~/.tmux/plugins/tpm/tpm'` 这种裸 bootstrap 方式。
+
+`tmux.nvim` 则不在这一轮的第一阶段迁移范围内，后续如确实需要，再考虑自定义打包或替代方案。
+
+#### 明确存在的快捷键冲突
+
+上游配置里有几处和我当前绑定直接冲突：
+
+| 上游键位 | 上游用途 | 当前用途 | 处理方式 |
+| --- | --- | --- | --- |
+| `prefix + /` | `tmux-copycat` 搜索 | 快速分屏 | 保留现有分屏，不在第一阶段接入 `copycat` 绑定 |
+| `prefix + Ctrl-s` | `resurrect` 保存会话 | 前缀本身是 `Ctrl+s` | 第一阶段不启用 `resurrect/continuum` |
+| `prefix + m` | pane 迁移 | 鼠标开关 | 保留现有鼠标开关 |
+| `prefix + Space` | `which-key` 菜单 | tmux 默认下一个 layout | 可接受覆盖默认行为，但先只作为新增插件能力，不强行迁移更多上游键位 |
+
+#### 第一阶段接入策略
+
+第一阶段只接入低冲突部分，目标是先完成“Home Manager 原生化 + 插件声明式管理”：
+
+- 保留现有前缀和核心绑定不变
+- 接入这些插件：
+  - `tmux-sensible`
+  - `tmux-yank`
+  - `tmux-open`
+  - `tmux-which-key`
+  - `tmux-mode-indicator`
+  - `tmux-sidebar`
+- 保留现有状态栏、true color、`allow-passthrough`、`SSH_AUTH_SOCK` 更新等基础设置
+
+#### 暂不在第一阶段做的事
+
+- 不直接采用上游的整份窗口/会话管理键位
+- 不启用 `tmux-copycat` 默认键位
+- 不启用 `tmux-resurrect` / `tmux-continuum`
+- 不接入 `tmux.nvim`
+- 不依赖 `~/.tmux/plugins/tpm/tpm`
+
+这样做的好处是：先把 tmux 管理方式整理干净，再逐个评估冲突较强的功能，而不是一次性把整份外部配置塞进来。
