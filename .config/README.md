@@ -358,7 +358,7 @@ ESC 字符是许多 ANSI 转义序列的开始标志。这些序列告诉终端�
 
 因此不需要把 TPM 自身也带进来，更不需要保留 `run '~/.tmux/plugins/tpm/tpm'` 这种裸 bootstrap 方式。
 
-`tmux.nvim` 则不在这一轮的第一阶段迁移范围内，后续如确实需要，再考虑自定义打包或替代方案。
+`tmux.nvim` 则不在这一轮的第一阶段迁移范围内；第二阶段评估后也先不接入，因为当前 Neovim 配置已经通过 `smart-splits.nvim` 管理 Neovim 内部窗口移动，而 tmux 侧已有全局 `Ctrl+Alt+h/j/k/l` 面板移动。除非后续想把 Neovim 和 tmux 的 pane navigation 统一到同一组按键，否则暂时不需要再引入一层职责重叠的插件。
 
 #### 明确存在的快捷键冲突
 
@@ -394,3 +394,48 @@ ESC 字符是许多 ANSI 转义序列的开始标志。这些序列告诉终端�
 - 不依赖 `~/.tmux/plugins/tpm/tpm`
 
 这样做的好处是：先把 tmux 管理方式整理干净，再逐个评估冲突较强的功能，而不是一次性把整份外部配置塞进来。
+
+#### 第二阶段接入策略
+
+第二阶段补上第一阶段暂缓的 `tmux-copycat`、`tmux-resurrect` 和 `tmux-continuum`，但不采用它们会撞现有习惯的默认键位。
+
+已接入插件：
+
+- `tmux-copycat`
+- `tmux-resurrect`
+- `tmux-continuum`
+
+第二阶段的核心原则：
+
+- 保留 `prefix + /` 作为快速下方分屏。
+- 避免把 `prefix + Ctrl-s` 用作 resurrect 保存，因为当前 prefix 本身就是 `Ctrl+s`。
+- resurrect/continuum 使用 Nix 管理的 tmux plugin 包，不引入 TPM。
+- continuum 只启用自动保存，不启用开机自恢复，避免启动 tmux 时意外恢复旧现场。
+
+#### 第二阶段键位结果
+
+| 功能 | 当前键位/设置 | 说明 |
+| --- | --- | --- |
+| copycat 通用搜索 | `prefix + Ctrl+/` | 避开原有 `prefix + /` 分屏。 |
+| copycat 文件搜索 | `prefix + Ctrl+f` | 使用 copycat 的文件路径搜索。 |
+| copycat URL 搜索 | `prefix + Ctrl+u` | 搜索 URL、git/ssh/file 链接等。 |
+| copycat 数字搜索 | `prefix + Ctrl+d` | 搜索数字串。 |
+| copycat git special | `prefix + Ctrl+g` | 在 git 输出中搜索文件。 |
+| copycat hash 搜索 | `prefix + Alt+h` | 搜索 commit/hash 风格文本。 |
+| copycat IP 搜索 | `prefix + Alt+i` | 搜索 IPv4 地址。 |
+| resurrect 保存 | `prefix + S` | 手动保存 tmux 环境。 |
+| resurrect 恢复 | `prefix + R` | 手动恢复最近一次保存的 tmux 环境。 |
+| resurrect 保存目录 | `${XDG_DATA_HOME}/tmux/resurrect` | 避免继续依赖传统 `~/.tmux/resurrect` 路径。 |
+| resurrect pane 内容 | `@resurrect-capture-pane-contents on` | 保存 pane 内容，恢复时保留更多上下文。 |
+| Neovim 恢复策略 | `@resurrect-strategy-nvim session` | 允许 resurrect 使用 Neovim session 策略。 |
+| continuum 自动保存间隔 | `15` 分钟 | 定期触发 resurrect 保存。 |
+| continuum 自动恢复 | `off` | 不在 tmux 启动时自动恢复。 |
+| continuum 自动启动 | `off` | 不生成额外 boot/startup 行为。 |
+
+#### `tmux.nvim` 当前决策
+
+暂时不补 `tmux.nvim`。
+
+原因是现有 Neovim 配置已经包含 `smart-splits.nvim`，并将 Neovim 内部窗口移动放在 `Ctrl+h/j/k/l`；tmux 配置则把外部 pane 移动放在无前缀 `Ctrl+Alt+h/j/k/l`。这两组键位职责清晰，且不会互相覆盖。
+
+如果以后想要同一组 `Ctrl+h/j/k/l` 在 Neovim window 和 tmux pane 之间自动穿透，再重新评估 `tmux.nvim` 或 `vim-tmux-navigator` 一类方案。
