@@ -1,12 +1,58 @@
-[user]
-	email = handy-sun@foxmail.com
-	name = sooncheer
-
 [core]
 	autocrlf = false
+	editor = "nvim"
+	quotepath = false
 	safecrlf = true
-	editor = vim
-	# pager = less -FRSX
+
+[delta]
+	features = "decorations"
+	line-numbers = true
+	minus-emph-style = "syntax #5a2a32"
+	minus-style = "syntax #3a1f24"
+	navigate = true
+	plus-emph-style = "syntax #2a5a38"
+	plus-style = "syntax #1f3a28"
+	side-by-side = false
+	true-color = "always"
+	whitespace-error-style = "22 reverse"
+
+[delta "decorations"]
+	commit-decoration-style = "bold yellow box ul"
+	file-decoration-style = "none"
+	file-style = "bold yellow ul"
+
+[diff]
+	colorMoved = "default"
+	tool = "nvimdiff"
+
+[difftool]
+	prompt = false
+	stack = true
+
+[fetch]
+	prune = true
+
+[init]
+	defaultBranch = "main"
+
+[interactive]
+	diffFilter = "delta --color-only"
+
+[merge]
+	tool = "nvimd-3w"
+
+[mergetool]
+	keepBackup = false
+	prompt = true
+
+[mergetool "nvimd-3w"]
+	cmd = "nvim -d \"$LOCAL\" \"$MERGED\" \"$REMOTE\" -c \"wincmd =\""
+
+[pager]
+	blame = "delta"
+	diff = "delta"
+	log = "delta"
+	show = "delta"
 
 [pull]
 	rebase = true
@@ -14,33 +60,28 @@
 [push]
 	autoSetupRemote = true
 
-[diff]
-	tool = vimdiff
+[rebase]
+	autostash = true
 
-[difftool "vimdiffc"]
-	cmd = vimdiff \"$LOCAL\" \"$REMOTE\"
+[url "___PUSH_DISABLED___"]
+	pushInsteadOf = "ghro:"
+	pushInsteadOf = "bgro:"
 
-[difftool]
-	prompt = false
+[url "https://codeberg.org/"]
+	insteadOf = "bg:"
+	insteadOf = "bgro:"
 
-[init]
-	defaultBranch = master
+[url "https://github.com/"]
+	insteadOf = "gh:"
+	insteadOf = "ghro:"
 
-## about git-delta
-[core]
-	pager = delta
+[url "ssh://git@codeberg.org/"]
+	insteadOf = "bgp:"
+	pushInsteadOf = "bg:"
 
-[interactive]
-	diffFilter = delta --color-only
+[url "ssh://git@github.com/"]
+	pushInsteadOf = "https://github.com/"
 
-[delta]
-	navigate = true ## use n and N to move between diff sections
-	## delta detects terminal colors automatically; set one of these to disable auto-detection
-	dark = true
-	side-by-side = true
-
-[merge]
-	conflictstyle = diff3
-
-[diff]
-	colorMoved = default
+[user]
+	email = "handy-sun@foxmail.com"
+	name = "sooncheer"
