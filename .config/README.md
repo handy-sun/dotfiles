@@ -439,3 +439,199 @@ ESC 字符是许多 ANSI 转义序列的开始标志。这些序列告诉终端�
 原因是现有 Neovim 配置已经包含 `smart-splits.nvim`，并将 Neovim 内部窗口移动放在 `Ctrl+h/j/k/l`；tmux 配置则把外部 pane 移动放在无前缀 `Ctrl+Alt+h/j/k/l`。这两组键位职责清晰，且不会互相覆盖。
 
 如果以后想要同一组 `Ctrl+h/j/k/l` 在 Neovim window 和 tmux pane 之间自动穿透，再重新评估 `tmux.nvim` 或 `vim-tmux-navigator` 一类方案。
+
+## Zellij 配置说明
+
+Zellij 是一个用 Rust 编写的终端复用器，定位为 tmux 的现代替代。本配置采用 tmux 兼容键位体系，默认清除了所有 Zellij 自带快捷键（`clear-defaults=true`），从零构建。
+
+### 使用方式
+
+Shell 集成（自动 attach）已关闭，手动启动：
+
+- `zellij` — 新建会话
+- `zellij attach <session>` — 附加已有会话
+- `zellij ls` — 列出会话
+
+### 模式体系
+
+Zellij 是模式驱动的，按键行为取决于当前模式。核心设计原则：**Ctrl+字母进入模式，模式内用单键操作，Enter/Esc 退回 Normal**。
+
+| 模式 | 进入 | 退出 | 用途 |
+| --- | --- | --- | --- |
+| Normal | 默认 | — | 终端正常输入 |
+| Locked | Ctrl+g | Ctrl+g | 锁定模式，禁止所有 Zellij 快捷键（防误触） |
+| Tmux | Ctrl+a 或 Ctrl+t | Enter/Esc | tmux 兼容操作层 |
+| Resize | Alt+r | Enter/Esc | 调整面板大小 |
+| Pane | Ctrl+p | Enter/Esc | 面板管理 |
+| Move | Ctrl+h | Enter/Esc | 移动面板位置 |
+| Tab | Ctrl+t（Tmux 模式内） | Enter/Esc | 标签页管理 |
+| Scroll | Ctrl+s | Enter/Esc | 滚动/翻页 |
+| Session | Ctrl+o | Enter/Esc | 会话管理/插件 |
+
+### 全局快捷键（Normal 模式下直接生效）
+
+以下快捷键在所有非 Locked 模式下都可用，无需先进入特定模式：
+
+| 快捷键 | 功能 |
+| --- | --- |
+| Ctrl+g | 进入 Locked 模式 |
+| Ctrl+q | 退出 Zellij |
+| Ctrl+a / Ctrl+t | 进入 Tmux 模式 |
+| Alt+r | 进入 Resize 模式 |
+| Ctrl+p | 进入 Pane 模式 |
+| Ctrl+h | 进入 Move 模式 |
+| Ctrl+s | 进入 Scroll 模式 |
+| Ctrl+o | 进入 Session 模式 |
+| Ctrl+Alt+h | 焦点移向左侧面板/标签 |
+| Ctrl+Alt+l | 焦点移向右侧面板/标签 |
+| Ctrl+Alt+j | 焦点移向下方面板 |
+| Ctrl+Alt+k | 焦点移向上方面板 |
+| Ctrl+Alt+n | 下一个标签 |
+| Ctrl+Alt+p | 上一个标签 |
+| Alt+f | 切换浮动面板 |
+| Alt+n | 新建面板 |
+| Alt+i | 标签左移 |
+| Alt+o | 标签右移 |
+| Alt+h | 焦点移向左 |
+| Alt+l | 焦点移向右 |
+| Alt+j | 焦点移向下 |
+| Alt+k | 焦点移向上 |
+| Alt+= / Alt++ | 增大面板 |
+| Alt+- | 缩小面板 |
+| Alt+[ | 上一个 swap layout |
+| Alt+] | 下一个 swap layout |
+| Alt+p | 切换面板分组 |
+| Alt+Shift+p | 切换分组标记 |
+
+### Resize 模式（Alt+r 进入）
+
+| 快捷键 | 功能 |
+| --- | --- |
+| h / Left | 向左增大 |
+| j / Down | 向下增大 |
+| k / Up | 向上增大 |
+| l / Right | 向右增大 |
+| H | 向左缩小 |
+| J | 向下缩小 |
+| K | 向上缩小 |
+| L | 向右缩小 |
+| = / + | 整体增大 |
+| - | 整体缩小 |
+
+### Pane 模式（Ctrl+p 进入）
+
+| 快捷键 | 功能 |
+| --- | --- |
+| h / Left | 焦点左移 |
+| j / Down | 焦点下移 |
+| k / Up | 焦点上移 |
+| l / Right | 焦点右移 |
+| p | 轮换焦点面板 |
+| n | 新建面板（自动方向） |
+| s / d | 下方新建面板 |
+| v / r | 右侧新建面板 |
+| x | 关闭当前面板 |
+| f / z | 全屏切换 |
+| w | 切换浮动面板层 |
+| e | 切换面板嵌入/浮动 |
+| c | 重命名面板 |
+| i | 固定/取消固定面板 |
+
+### Move 模式（Ctrl+h 进入）
+
+| 快捷键 | 功能 |
+| --- | --- |
+| h / Left | 向左移动面板 |
+| j / Down | 向下移动面板 |
+| k / Up | 向上移动面板 |
+| l / Right | 向右移动面板 |
+| n / Tab | 交换到下一个位置 |
+| p | 交换到上一个位置 |
+
+### Tab 模式（Tmux 模式内 Ctrl+t 进入）
+
+| 快捷键 | 功能 |
+| --- | --- |
+| r / , | 重命名标签 |
+| h / Left / Up / k / p | 上一个标签 |
+| l / Right / Down / j / n | 下一个标签 |
+| c / n | 新建标签 |
+| x | 关闭标签 |
+| s | 同步输入开关 |
+| b | 将面板脱离为独立标签 |
+| ] | 面板脱离到右侧新标签 |
+| [ | 面板脱离到左侧新标签 |
+| 1-9 | 跳转到第 N 个标签 |
+| Tab | 切换最近两个标签 |
+
+### Scroll 模式（Ctrl+s 进入）
+
+| 快捷键 | 功能 |
+| --- | --- |
+| e | 用编辑器打开回滚内容 |
+| s / / | 进入搜索 |
+| Ctrl+c | 滚到底部并退出 |
+| j / Down | 向下滚动一行 |
+| k / Up | 向上滚动一行 |
+| Ctrl+f / PageDown / Right / l | 向下翻页 |
+| Ctrl+b / PageUp / Left / h | 向上翻页 |
+| d | 向下翻半页 |
+| u | 向上翻半页 |
+
+### Search 模式（Scroll 模式按 s/ / 进入）
+
+| 快捷键 | 功能 |
+| --- | --- |
+| n | 向下搜索 |
+| p | 向上搜索 |
+| c | 切换大小写敏感 |
+| w | 切换循环搜索 |
+| o | 切换全字匹配 |
+
+### Session 模式（Ctrl+o 进入）
+
+| 快捷键 | 功能 |
+| --- | --- |
+| d | 分离会话 |
+| w | 打开会话管理器 |
+| c | 打开配置编辑器 |
+| p | 打开插件管理器 |
+| l | 打开布局管理器 |
+
+### Tmux 模式（Ctrl+a 或 Ctrl+t 进入）
+
+提供 tmux 风格的按键映射，方便 tmux 用户迁移：
+
+| 快捷键 | 功能 |
+| --- | --- |
+| [ | 进入 Scroll 模式 |
+| Ctrl+a | 发送 Ctrl+a 到终端 |
+| Ctrl+t | 发送 Ctrl+t 到终端 |
+| " / s | 下方分屏 |
+| % / v | 右侧分屏 |
+| z | 全屏切换 |
+| c | 新建标签 |
+| , | 重命名标签 |
+| p | 上一个标签 |
+| n | 下一个标签 |
+| 1-9 | 跳转标签 |
+| h / Left | 焦点左移 |
+| l / Right | 焦点右移 |
+| j / Down | 焦点下移 |
+| k / Up | 焦点上移 |
+| o | 焦点下一面板 |
+| d | 分离会话 |
+| Space | 切换 swap layout |
+| x | 关闭面板 |
+| w | 进入 Session 模式 |
+| t | 进入 Tab 模式 |
+| m | 进入 Move 模式 |
+| M | 切换面板边框 |
+| r | 打开配置编辑器 |
+
+### 设计要点
+
+- **Ctrl+n 已释放**：Resize 模式入口从 Ctrl+n 改为 Alt+r，Ctrl+n 不再被 Zellij 拦截，可正常传递给 Neovim（用于切换目录树）
+- **Alt+Left/Right 已移除**：避免与终端单词级跳转冲突，用 Alt+h/l 替代面板间左右移动
+- **双入口设计**：Ctrl+Alt+h/j/k/l（不挡 shell）和 Alt+h/j/k/l（更顺手）都可移动焦点，前者在全模式可用，后者是 shared_except 的直接操作
+- **Tmux 兼容层**：Ctrl+a 进入 Tmux 模式，保持 tmux 用户的肌肉记忆
