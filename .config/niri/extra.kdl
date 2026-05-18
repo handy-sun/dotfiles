@@ -26,7 +26,7 @@ layout {
     }
 }
 
-/-environment {
+environment {
     QT_QPA_PLATFORMTHEME "gtk3"
     WAYLAND_DISPLAY "wayland-1"
 }
@@ -53,7 +53,7 @@ binds {
 
     // Noctalia controls
     Mod+Return{ spawn-sh "noctalia-shell ipc call launcher toggle"; }
-    Super+Shift+L hotkey-overlay-title="Lock the Screen: noctalia-shell lock" { spawn-sh "noctalia-shell ipc call lockScreen lock"; }
+    Mod+Shift+L hotkey-overlay-title="Lock the Screen: noctalia-shell lock" { spawn-sh "noctalia-shell ipc call lockScreen lock"; }
     Mod+Space { spawn-sh "noctalia-shell ipc call settings toggle"; }
     Mod+Shift+Space { spawn-sh "noctalia-shell ipc call controlCenter toggle"; }
     Mod+Shift+M { spawn-sh "noctalia-shell ipc call plugin togglePanel mediaMini"; }
