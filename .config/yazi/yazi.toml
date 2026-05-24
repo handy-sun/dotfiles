@@ -16,7 +16,9 @@ edit = [
     { run = "%EDITOR% %*",  block = true, for = "windows" },
 ]
 open = [
-    { run = 'xdg-open "$@"', desc = "Open" },
+    { run = "xdg-open %s1", desc = "Open", for = "linux" },
+    { run = "open %s", desc = "Open", for = "macos" },
+    { run = 'start "" %s1', desc = "Open", for = "windows", orphan = true },
 ]
 extract = [
     { run = 'ouch d -y %*', desc = "Extract here with ouch(Windows)", for = "windows" },
@@ -42,8 +44,8 @@ append_rules = [
 
 [plugin]
 prepend_fetchers = [
-    { id = "git", url = "*", run = "git" },
-    { id = "git", url = "*/", run = "git" },
+    { id = "git", url = "*", run = "git", group = "git" },
+    { id = "git", url = "*/", run = "git", group = "git" },
 ]
 prepend_previewers = [
     { url = '**/.git/', run = 'preview-git' },
