@@ -1,0 +1,60 @@
+# 全局选项
+{
+    # 日志
+    log {
+        output file /tmp/caddy-access.log
+    }
+    # 默认错误日志
+    errlog /tmp/caddy-error.log
+    # 调整最大连接数
+    max_connections 1024
+    # 关闭服务器版本显示
+    hide_server_version
+}
+
+# 默认配置 - 处理未匹配的请求
+:80 {
+    root * /var/www/html
+    try_files {path} /index.html
+
+    # 阻止空 User-Agent 和恶意爬虫
+    # @blocked_ua {
+    #     @empty_ua empty
+    #     @bad_ua {
+    #         user_agent Scrapy
+    #         user_agent python
+    #         user_agent Nmap
+    #         user_agent wget
+    #         user_agent httpclient
+    #         user_agent MJ12bot
+    #         user_agent Expanse
+    #         user_agent ahrefsbot
+    #         user_agent seznambot
+    #         user_agent serpstatbot
+    #         user_agent sindresorhus
+    #         user_agent zgrab
+    #     }
+    # }
+    respond @blocked_ua 403
+
+    # 阻止以 . 开头的隐藏文件
+    @hidden_files {
+        path /.??*
+    }
+    respond @hidden_files 403
+
+    encode gzip
+    file_server
+}
+
+# 反向代理配置
+
+# 根路径重定向到 /web/index.html
+hemi.example.xyz {
+    @root path /
+    redirect @root /web/index.html
+
+    reverse_proxy localhost:8096
+    encoding gzip
+}
+
