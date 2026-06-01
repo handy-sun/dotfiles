@@ -100,3 +100,12 @@ gestures {
     }
 }
 
+// Terminal blur effect
+window-rule {
+    match app-id=r#"^org\.wezfurlong\.wezterm$|^Alacritty$|^kitty$|^com\.mitchellh\.ghostty$"#
+    opacity 0.95
+    background-effect {
+        blur true
+        noise 0.05
+    }
+}
