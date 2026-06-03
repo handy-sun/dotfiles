@@ -1,0 +1,35 @@
+frame = "none"
+maximized = true
+
+tabs = true
+title-hidden = false
+vsync = true
+# chdir = "C:\\qproject"
+
+[box-drawing]
+# mode = "font-glyph"
+mode = "native"
+
+[box-drawing.sizes]
+default = [2, 4]
+
+[font]
+edging = "antialias"
+hinting = "full"
+size = 12
+
+# normal = ["FiraCode Nerd Font Mono", "DejaVu Sans Mono"]
+
+[[font.normal]]
+family = "Maple Mono NF CN"
+# style = "Normal"
+
+## Set a different font for fallback
+[[font.normal]]
+family = "NotoMono Nerd Font Mono"
+style = "Normal"
+
+[[font.bold]]
+family = "Maple Mono NF"
+style = "Bold"
+
