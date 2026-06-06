@@ -1,0 +1,127 @@
+global {
+    tproxy_port: 12345
+    tproxy_port_protect: true
+    so_mark_from_dae: 0
+    log_level: info
+    disable_waiting_network: true
+    # lan_interface: auto
+    wan_interface: auto
+    auto_config_kernel_parameter: true
+    tcp_check_url: 'http://cp.cloudflare.com,1.1.1.1,2606:4700:4700::1111'
+    tcp_check_http_method: HEAD
+    udp_check_dns: 'dns.google.com:53,8.8.8.8,2001:4860:4860::8888'
+    check_interval: 600s
+    check_tolerance: 40ms
+    dial_mode: domain+
+    allow_insecure: false
+    sniffing_timeout: 300ms
+    tls_implementation: tls
+    utls_imitate: chrome_auto
+}
+
+dns {
+    ipversion_prefer: 4
+    upstream {
+        alidns: 'udp://223.5.5.5:53'
+        googledns: 'tcp+udp://8.8.8.8:53'
+    }
+
+    routing {
+        request {
+            qname(geosite:category-ads-all) -> reject
+            qname(full: dns.jd.com, full: dns.weixin.qq.com, full: dns.weixin.qq.com.cn, full: httpdns-sc.aliyuncs.com) -> reject
+
+            qname(geosite:google@cn) -> alidns
+            qname(suffix: abc.com, keyword: google) -> googledns
+            qname(full: ok.com, regex: '^yes') -> googledns
+
+            qtype(a, aaaa) -> alidns
+            qtype(cname) -> googledns
+            fallback: asis
+        }
+        response {
+            upstream(googledns) -> accept
+
+            ip(geoip:private) && !qname(geosite:cn) -> googledns
+            fallback: accept
+        }
+    }
+}
+
+node {
+    singb: 'socks5://localhost:2334'
+}
+
+group {
+    OK {
+        filter: name(singb)
+        policy: min_moving_avg
+    }
+}
+
+routing {
+    pname(
+        systemd-resolved,
+        NetworkManager,
+        systemd-networkd,
+        zerotier-one,
+        sing-box
+    ) -> must_direct
+
+    dip(geoip: private, geoip: cn) -> direct
+    dip(224.0.0.0/3, 'ff00::/8') -> direct
+    dip(103.149.93.9/32, 154.219.119.117/32) -> direct
+    dport(3478, 5201, 19302, 23301, 22101, 22102) -> direct
+
+    ipversion(6) -> block
+    l4proto(udp) && dport(443) -> block
+    domain(geosite: category-ads-all, geosite: category-ads) -> block
+    domain(
+        full: dns.jd.com,
+        full: dns.weixin.qq.com,
+        full: dns.weixin.qq.com.cn,
+        full: httpdns-sc.aliyuncs.com
+    ) -> block
+
+    domain(
+        suffix: ushd.xmsl.org,
+        suffix: cf.gtlx.org,
+        suffix: mtalk.google.com,
+        suffix: askmanyai.cn,
+        suffix: codeberg.org,
+        suffix: godbolt.org,
+        suffix: locyanfrp.cn,
+        suffix: litiaotiao.cn,
+        suffix: cimbar.org,
+        suffix: exp-tas.com,
+        suffix: bytednsdoc.com,
+        suffix: testipv6.cn,
+        suffix: ip938.com,
+        suffix: 647792.xyz,
+        suffix: alipay.com,
+        suffix: sub1.all--green.com,
+        full: aur.archlinux.org,
+        keyword: lcf.im,
+        regex: '\.rs',
+        regex: '^stun\.*'
+    ) -> direct
+
+    # game
+    domain(geosite:category-games@cn) -> direct
+    domain(suffix:steamcontent.com) -> direct
+    domain(suffix:steamusercontent-a.akamaihd.net) -> direct
+    # https://www.dogfight360.com/blog/knowledge-base/fix_steamdl_region/
+    domain(suffix:cm.steampowered.com) -> direct
+    domain(suffix:steamserver.net) -> direct
+
+    domain(
+        geosite: cn,
+        geosite: geolocation-cn,
+        geosite: category-scholar-!cn,
+        geosite: category-scholar-cn
+    ) -> direct
+
+    fallback: OK
+}
+
+# vim: set ft=config:
