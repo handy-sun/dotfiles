@@ -36,7 +36,7 @@
 ;; Smerge (merge conflict resolution)
 ;; ============================================================
 (use-package smerge-mode
-  :ensure nil
+  :straight nil
   :hook (prog-mode . smerge-mode))
 
 (provide 'git)

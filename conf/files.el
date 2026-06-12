@@ -24,7 +24,7 @@
 ;; Dired (built-in file manager)
 ;; ============================================================
 (use-package dired
-  :ensure nil
+  :straight nil
   :custom
   (dired-listing-switches "-alh --group-directories-first")
   (dired-kill-when-opening-new-dired-buffer t)
@@ -46,7 +46,7 @@
 ;; Project (built-in project management)
 ;; ============================================================
 (use-package project
-  :ensure nil
+  :straight nil
   :custom
   (project-switch-commands 'project-find-file))
 

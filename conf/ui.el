@@ -4,8 +4,9 @@
 ;; Theme (like set background=dark + colorscheme)
 ;; ============================================================
 (use-package doom-themes
+  :demand t
   :config
-  (load-theme 'doom-one t)            ; dark theme, close to your vim colors
+  (load-theme 'doom-one t)            ; OneDark style dark theme
   ;; Enable flashing mode-line on errors
   (doom-themes-visual-bell-config)
   ;; Enable custom neotree theme (treemacs integration)

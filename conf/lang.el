@@ -17,7 +17,7 @@
 ;; LSP (like ALE/coc.nvim for completion & diagnostics)
 ;; ============================================================
 (use-package eglot
-  :ensure nil                           ; built-in Emacs 29+
+  :straight nil                         ; built-in Emacs 29+
   :hook ((python-mode . eglot-ensure)
          (rust-mode . eglot-ensure)
          (go-mode . eglot-ensure)
@@ -92,7 +92,7 @@
 
 ;; C/C++
 (use-package cc-mode
-  :ensure nil
+  :straight nil
   :hook ((c-mode c++-mode) . (lambda ()
                                 (setq c-basic-offset 4
                                       indent-tabs-mode nil))))
