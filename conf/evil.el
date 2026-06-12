@@ -131,7 +131,7 @@
   ;; ============================================================
   (my/leader
     ;; ---- File operations
-    "w"   'save-buffer                  ; like <leader>w :w
+    "fs"  'save-buffer                  ; like <leader>fs :w
     "q"   'kill-current-buffer          ; like <leader>q :q
     "Q"   'kill-buffer-and-window       ; like <leader>Q :q!
     "bs"  'save-buffers-kill-terminal   ; like <leader><bs> :wqa
