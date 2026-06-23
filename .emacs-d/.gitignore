@@ -1,0 +1,13 @@
+# Emacs local files
+eln-cache/
+history
+auto-save-list/
+*.elc
+
+# straight.el packages (downloaded from GitHub)
+straight/
+
+# Temporary files
+*~
+\#*\#
+.#*
