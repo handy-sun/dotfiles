@@ -41,5 +41,6 @@
 (my/load-config 'files)
 (my/load-config 'editing)
 (my/load-config 'lang)
+(my/load-config 'telega)
 
 ;;; init.el ends here
