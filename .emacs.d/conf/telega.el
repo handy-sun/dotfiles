@@ -20,7 +20,11 @@
 ;; Telega
 ;; ============================================================
 (use-package telega
-  :straight nil
+  ;; Install from MELPA via straight.el's recipe repository.
+  ;; This pulls telega.el and builds the bundled telega-server; the C build
+  ;; still requires a matching TDLib installed at runtime (see manual:
+  ;; https://zevlg.github.io/telega.el/#linux-users).
+  :straight t
   :commands (telega
              telega-account-switch
              telega-chat-with
@@ -42,6 +46,11 @@
                      (file-name-directory telega-server-logfile)))
     (make-directory dir t))
   :custom
+  ;; TDLib install prefix (must contain include/ and lib/). On NixOS this is
+  ;; exported by home-manager as TELEGA_TDLIB_PREFIX pointing at pkgs.tdlib;
+  ;; elsewhere fall back to the usual /usr/local. telega-server-build links
+  ;; against $prefix/lib with an rpath, so no LD_LIBRARY_PATH is needed.
+  (telega-server-libs-prefix (or (getenv "TELEGA_TDLIB_PREFIX") "/usr/local"))
   (telega-root-fill-column 100)
   (telega-chat-fill-column 90)
   (telega-chat-buffers-limit 10))
