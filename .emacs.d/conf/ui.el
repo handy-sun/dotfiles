@@ -82,13 +82,15 @@
 ;; Font
 ;; ============================================================
 (set-face-attribute 'default nil
-                    :family "JetBrains Mono"
+                    :family "Maple Mono NF CN"
                     :height 130
                     :weight 'normal)
 
-;; Fallback for CJK
-(set-fontset-font t 'han
-                  (font-spec :family "Noto Sans CJK SC" :size 14) nil 'append)
+;; Maple Mono NF CN bundles Latin, CJK and Nerd Font glyphs with matched
+;; metrics, so CJK renders from the default face at the same height. Map it
+;; explicitly (no fixed :size, so it follows :height above) to guarantee the
+;; same family is used for han and keep Latin/CJK aligned.
+(set-fontset-font t 'han (font-spec :family "Maple Mono NF CN") nil 'prepend)
 
 (provide 'ui)
 ;;; ui.el ends here
