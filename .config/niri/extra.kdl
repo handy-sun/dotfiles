@@ -49,6 +49,7 @@ workspace "3" { }
 }
 
 binds {
+    Mod+Shift+S { spawn "mark-shot"; }
     Mod+Shift+T hotkey-overlay-title="Open a Terminal: wezterm" { spawn "wezterm"; }
 
     // Noctalia controls
