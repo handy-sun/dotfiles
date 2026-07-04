@@ -55,6 +55,32 @@
   (telega-chat-fill-column 90)
   (telega-chat-buffers-limit 10))
 
+;; ============================================================
+;; Clipboard image paste (Wayland-safe)
+;; ------------------------------------------------------------
+;; telega-chatbuf-attach-clipboard (C-c C-v) reads the clipboard via
+;; gui-get-selection. On PGTK/Wayland, when the clipboard holds only an
+;; image, (gui-get-selection 'CLIPBOARD 'TARGETS) returns the bare symbol
+;; `image/png' instead of a vector, so telega's cl-position signals
+;; "Wrong type argument: sequencep, image/png". Bypass that path by pulling
+;; the image straight from the Wayland clipboard with wl-paste.
+;; ============================================================
+(defun my/telega-attach-clipboard-image ()
+  "Attach the clipboard image to the telega chatbuf via wl-paste."
+  (interactive)
+  (unless (executable-find "wl-paste")
+    (error "wl-paste not found; install wl-clipboard"))
+  (let* ((temporary-file-directory telega-temp-dir)
+         (tmpfile (telega-temp-name "clipboard" ".png")))
+    (unless (zerop (call-process "wl-paste" nil (list :file tmpfile) nil
+                                 "-t" "image/png"))
+      (error "No image/png in clipboard"))
+    (telega-chatbuf-attach-media tmpfile)))
+
+(with-eval-after-load 'telega
+  (define-key telega-chat-mode-map (kbd "C-c C-v")
+              #'my/telega-attach-clipboard-image))
+
 (with-eval-after-load 'general
   (my/leader
     "tt" 'telega
