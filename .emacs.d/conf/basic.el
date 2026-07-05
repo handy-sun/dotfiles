@@ -91,7 +91,6 @@
 ;; ============================================================
 (setq history-length 1000)            ; like set history=1000
 (setq history-delete-duplicates t)
-(setq savehist-mode t)
 (savehist-mode 1)
 
 (setq-default require-final-newline t)

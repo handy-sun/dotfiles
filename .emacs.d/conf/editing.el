@@ -36,7 +36,7 @@
 ;; ============================================================
 ;; Query replace with symbol at point (like sa/sr in vimrc)
 ;; ============================================================
-(defun query-replace-symbol-at-point ()
+(defun my/query-replace-symbol-at-point ()
   "Replace symbol at point in the entire buffer."
   (interactive)
   (let ((sym (thing-at-point 'symbol t)))
@@ -50,8 +50,10 @@
 ;; ============================================================
 ;; Whitespace cleanup
 ;; ============================================================
-;; Show trailing whitespace (like set list)
-(setq-default show-trailing-whitespace t)
+;; Show trailing whitespace (like set list) — only in real editing buffers,
+;; not minibuffer/help/terminal/magit etc.
+(dolist (hook '(prog-mode-hook text-mode-hook conf-mode-hook))
+  (add-hook hook (lambda () (setq-local show-trailing-whitespace t))))
 
 ;; Clean up on save (like <leader>W :%s/\s\+$//)
 (add-hook 'before-save-hook 'delete-trailing-whitespace)

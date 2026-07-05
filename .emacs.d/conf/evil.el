@@ -105,12 +105,6 @@
    "zl" 'switch-to-buffer
    "z'" 'list-registers
 
-   ;; ---- Window resize (like <leader>[ and <leader>])
-   "C-[" (lambda () (interactive) (evil-window-decrease-width 8))
-   "C-]" (lambda () (interactive) (evil-window-increase-width 8))
-   "C-k" (lambda () (interactive) (evil-window-decrease-height 2))
-   "C-j" (lambda () (interactive) (evil-window-increase-height 2))
-
    ;; ---- Folding (like zx)
    "za" 'hs-toggle-hiding
    "zR" 'hs-show-all
@@ -139,7 +133,6 @@
     ;; ---- Buffer navigation
     "<left>"  'previous-buffer          ; like <leader><Left>
     "<right>" 'next-buffer              ; like <leader><Right>
-    "TAB"     'switch-to-buffer         ; quick buffer switch
 
     ;; ---- Window management
     "wd"  'delete-window
@@ -152,9 +145,11 @@
     "wj"  'evil-window-down
     "w["  (lambda () (interactive) (evil-window-decrease-width 8))
     "w]"  (lambda () (interactive) (evil-window-increase-width 8))
+    "w-"  (lambda () (interactive) (evil-window-decrease-height 2))
+    "w="  (lambda () (interactive) (evil-window-increase-height 2))
 
     ;; ---- Search & Replace (like sa/sr/s/)
-    "sr"  'query-replace-symbol-at-point
+    "sr"  'my/query-replace-symbol-at-point
     "s/"  'query-replace
     "sp"  'consult-ripgrep
     "ss"  'consult-line
@@ -175,11 +170,9 @@
     "gg"  'magit-status                 ; like vim-fugitive
     "gb"  'magit-blame                  ; like blamer.nvim
     "gd"  'magit-diff-buffer-file
-
-    ;; ---- Code navigation
-    "gd"  'evil-goto-definition         ; like gD
     "gi"  'imenu                        ; like tagbar gi
     "gr"  'xref-find-references
+    "gD"  'evil-goto-definition         ; like gD
 
     ;; ---- Misc
     "SPC" 'execute-extended-command     ; like M-x
