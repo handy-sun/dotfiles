@@ -81,7 +81,7 @@
    ;; ---- Esc clears search highlight (like nnoremap <Esc> :let @/=''<CR>)
    "<escape>" (lambda () (interactive)
                 (evil-ex-nohighlight)
-                (keyboard-escape-quit))
+                (evil-force-normal-state))
 
    ;; ---- n/N always forward/backward (like your nnoremap n 'Nn'[v:searchforward])
    "n" (lambda () (interactive)
