@@ -1,0 +1,58 @@
+{
+  "version": 2,
+  "rules": [
+    {
+      "domain": "sub1.all--green.com",
+      "domain_suffix": [
+        "647792.xyz",
+        "alipay.com",
+        "askmanyai.cn",
+        "aur.archlinux.org",
+        "bytednsdoc.com",
+        "cf.gtlx.org",
+        "cimbar.org",
+        "codeberg.org",
+        "exp-tas.com",
+        "godbolt.org",
+        "ip938.com",
+        "litiaotiao.cn",
+        "locyanfrp.cn",
+        "mtalk.google.com",
+        "sagernet.org",
+        "testipv6.cn",
+        "ushd.xmsl.org",
+        "pipio.io"
+      ],
+      "domain_keyword": "lcf.im",
+      "domain_regex": [
+        "^stun\\..+",
+        "\\.rs"
+      ],
+      "ip_cidr": [
+        "103.149.93.96/32"
+      ],
+      "port": [
+        3478,
+        5201,
+        19302,
+        22101,
+        22102,
+        23301
+      ],
+      "process_name": [
+        "zerotier-one",
+        "status-client"
+      ],
+      "process_path": "/Applications/RustDesk.app/",
+      "package_name": [
+        "org.kde.kdeconnect_tp",
+        "com.mercury.ipc",
+        "com.xiaomi.xmsf",
+        "com.ss.android.ugc.aweme",
+        "com.tencent.mm",
+        "com.tencent.mobileqq",
+        "com.carriez.flutter_hbb"
+      ]
+    }
+  ]
+}
