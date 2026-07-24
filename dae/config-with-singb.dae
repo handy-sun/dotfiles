@@ -60,17 +60,25 @@ group {
 }
 
 routing {
+    ## controller face and DERP need proxy
+    domain(suffix: tailscale.com) -> OK
+
     pname(
         systemd-resolved,
         NetworkManager,
         systemd-networkd,
         zerotier-one,
+        tailscaled,
         sing-box
     ) -> must_direct
 
+    ## avoid tail netrwork traffic proxyed by dae
+    dip(100.64.0.0/10, 'fd7a:115c:a1e0::/48') -> direct
+
     dip(geoip: private, geoip: cn) -> direct
     dip(224.0.0.0/3, 'ff00::/8') -> direct
-    dip(103.149.93.9/32, 154.219.119.117/32) -> direct
+    ## reinsvps public ip
+    dip(103.149.93.96/32) -> direct
     dport(3478, 5201, 19302, 23301, 22101, 22102) -> direct
 
     ipversion(6) -> block
@@ -99,6 +107,7 @@ routing {
         suffix: ip938.com,
         suffix: 647792.xyz,
         suffix: alipay.com,
+        suffix: pipio.io,
         suffix: sub1.all--green.com,
         full: aur.archlinux.org,
         keyword: lcf.im,
