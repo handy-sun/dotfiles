@@ -115,14 +115,6 @@ routing {
         regex: '^stun\.*'
     ) -> direct
 
-    # game
-    domain(geosite:category-games@cn) -> direct
-    domain(suffix:steamcontent.com) -> direct
-    domain(suffix:steamusercontent-a.akamaihd.net) -> direct
-    # https://www.dogfight360.com/blog/knowledge-base/fix_steamdl_region/
-    domain(suffix:cm.steampowered.com) -> direct
-    domain(suffix:steamserver.net) -> direct
-
     domain(
         geosite: cn,
         geosite: geolocation-cn,
