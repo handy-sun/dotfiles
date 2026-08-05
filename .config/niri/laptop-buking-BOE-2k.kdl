@@ -1,0 +1,15 @@
+// Niri Config (based on sensei/nixos laptop config)
+output "eDP-1" {
+    mode "1920x1080@60.049"
+    scale 1
+    transform "normal"
+    position x=2327 y=0
+}
+
+output "BOE 0x0C8E Unknown" {
+    mode "2560x1600@240.000"
+    scale 1.1
+    transform "normal"
+    position x=0 y=0
+}
+

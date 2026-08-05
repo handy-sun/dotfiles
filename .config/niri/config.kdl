@@ -1,3 +1,4 @@
 include "default-config.kdl"
 include "extra.kdl"
 include "noctalia.kdl"
+include "laptop-buking-BOE-2k.kdl"
