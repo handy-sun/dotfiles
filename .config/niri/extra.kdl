@@ -104,9 +104,9 @@ gestures {
 // Application blur effect
 window-rule {
     match app-id=r#"^org\.wezfurlong\.wezterm$|^Alacritty$|^kitty$|^com\.mitchellh\.ghostty$|^neovide$"#
-    opacity 0.85
+    opacity 0.9
     background-effect {
         blur true
-        noise 0.05
+        noise 0.06
     }
 }
