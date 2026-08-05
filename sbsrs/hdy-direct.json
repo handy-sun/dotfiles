@@ -21,7 +21,8 @@
         "sagernet.org",
         "testipv6.cn",
         "ushd.xmsl.org",
-        "pipio.io"
+        "pipio.io",
+        "zhima.world"
       ],
       "domain_keyword": "lcf.im",
       "domain_regex": [
@@ -29,7 +30,8 @@
         "\\.rs"
       ],
       "ip_cidr": [
-        "103.149.93.96/32"
+        "103.149.93.96/32",
+        "100.64.0.0/10"
       ],
       "port": [
         3478,
@@ -41,6 +43,7 @@
       ],
       "process_name": [
         "zerotier-one",
+        "tailscaled",
         "status-client"
       ],
       "process_path": "/Applications/RustDesk.app/",
