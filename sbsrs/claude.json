@@ -1,0 +1,18 @@
+
+{
+  "version": 2,
+  "rules": [
+    {
+      "domain_suffix": [
+        "anthropic.com",
+        "claude.ai",
+        "claudeusercontent.com",
+        "segment.io",
+        "segment.com"
+      ],
+      "domain": [
+        "api.anthropic.com"
+      ],
+    }
+  ]
+}
