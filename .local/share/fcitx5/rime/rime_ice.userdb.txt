@@ -1,0 +1,552 @@
+# Rime user dictionary
+#@/db_name	rime_ice
+#@/db_type	userdb
+#@/rime_version	1.17.0
+#@/tick	632
+#@/user_id	9d0922bb-2196-4703-8ad7-5b1d1981f005
+a 	啊	c=3 d=1.31215 t=632
+ai guo 	爱过	c=1 d=0.631284 t=632
+an 	按	c=1 d=0.418952 t=632
+an le 	按了	c=1 d=0.891366 t=632
+ba 	吧	c=7 d=3.25399 t=632
+ba 	把	c=4 d=1.82535 t=632
+ban 	版	c=1 d=0.955997 t=632
+bang 	帮	c=1 d=0.778801 t=632
+bao fu 	报复	c=1 d=0.802519 t=632
+bei 	被	c=2 d=1.17694 t=632
+bei fen 	备份	c=1 d=0.951229 t=632
+bei zhu 	备注	c=1 d=0.362402 t=632
+ben 	本	c=1 d=0.67032 t=632
+bi ru 	比如	c=2 d=0.882497 t=632
+bi xu yao 	必须要	c=1 d=0.637628 t=632
+bi zhi 	壁纸	c=1 d=0.737123 t=632
+bu 	部	c=1 d=0.951229 t=632
+bu fen 	部分	c=1 d=0.715338 t=632
+bu fu he 	不符合	c=1 d=0.453845 t=632
+bu fu ze 	不负责	c=1 d=0.722527 t=632
+bu jiu 	不久	c=1 d=0.946485 t=632
+bu ju 	布局	c=1 d=0.895834 t=632
+bu neng 	不能	c=2 d=1.26792 t=632
+bu shi 	不是	c=1 d=0.831104 t=632
+bu yao 	不要	c=1 d=0.941765 t=632
+cai xin 	彩信	c=1 d=0.722527 t=632
+cai xing 	才行	c=1 d=0.726149 t=632
+cha 	差	c=1 d=0.763379 t=632
+cha jian 	插件	c=1 d=0.985112 t=632
+cha yue 	查阅	c=2 d=1.26083 t=632
+cheng 	城	c=1 d=0.690734 t=632
+cheng 	成	c=1 d=0.860708 t=632
+cheng gong lv 	成功率	c=1 d=0.759572 t=632
+cheng shi 	城市	c=1 d=0.891366 t=632
+chong qi 	重启	c=2 d=1.43878 t=632
+chu xian 	出现	c=1 d=0.913931 t=632
+chuang kou 	窗口	c=3 d=1.88685 t=632
+chuang kou o 	窗口哦	c=1 d=0.843665 t=632
+ci ku 	词库	c=1 d=0.923116 t=632
+cong 	从	c=1 d=0.97531 t=632
+da 	打	c=2 d=1.32092 t=632
+da bao 	打包	c=1 d=0.951229 t=632
+da dao 	达到	c=1 d=0.895834 t=632
+da dian hua 	打电话	c=2 d=1.27913 t=632
+da dong 	打洞	c=2 d=1.55032 t=632
+da lao 	大佬	c=1 d=0.946485 t=632
+da zi 	打字	c=0 d=0.0436049 t=632
+da zi kuang 	打字框	c=1 d=0.438235 t=632
+dai kuan 	带宽	c=1 d=0.683861 t=632
+dan ci 	单词	c=1 d=0.429557 t=632
+dan shi 	但是	c=1 d=0.621885 t=632
+dang qian 	当前	c=3 d=2.55858 t=632
+dang qiang 	挡枪	c=2 d=1.35751 t=632
+dao 	到	c=6 d=3.60148 t=632
+dao zhi 	导致	c=1 d=0.904837 t=632
+de 	的	c=39 d=14.7571 t=632
+dei 	得	c=1 d=0.856415 t=632
+deng ji 	等级	c=1 d=0.585669 t=632
+di dian 	地点	c=1 d=0.647265 t=632
+di yi ge 	第一个	c=1 d=0.895834 t=632
+di zhi 	地址	c=2 d=0.748264 t=632
+diao 	掉	c=1 d=0.798516 t=632
+dong xi 	东西	c=3 d=1.5269 t=632
+dou 	都	c=3 d=2.34684 t=632
+dou bu xing 	都不行	c=1 d=0.847894 t=632
+dou shi 	都是	c=2 d=0.941765 t=632
+dui biao 	对标	c=1 d=0.960789 t=632
+dui jie 	对接	c=1 d=0.83527 t=632
+duo shao 	多少	c=1 d=0.904837 t=632
+e wai 	额外	c=1 d=0.88692 t=632
+er bu shi 	而不是	c=1 d=0.83527 t=632
+fa 	法	c=2 d=1.09326 t=632
+fa da 	发达	c=1 d=0.873716 t=632
+fa xian 	发现	c=1 d=0.551563 t=632
+fan ka 	饭卡	c=1 d=0.532592 t=632
+fan zha 	反诈	c=1 d=0.609571 t=632
+fang zai 	放在	c=1 d=0.97531 t=632
+fei dei 	非得	c=1 d=0.715338 t=632
+fen xi 	分析	c=1 d=0.927743 t=632
+fu dong 	浮动	c=1 d=0.882497 t=632
+fu gai 	覆盖	c=1 d=0.869358 t=632
+gai le 	改了	c=1 d=0.615697 t=632
+gai wei 	改为	c=1 d=0.913931 t=632
+gao su wo 	告诉我	c=2 d=1.80155 t=632
+ge 	个	c=2 d=1.30629 t=632
+ge shi 	格式	c=1 d=0.382893 t=632
+gei 	给	c=1 d=0.740818 t=632
+gei wo 	给我	c=2 d=1.11477 t=632
+gong ju 	工具	c=2 d=1.69156 t=632
+gong neng 	功能	c=2 d=1.23534 t=632
+gong si 	公司	c=1 d=0.805167 t=632
+gong zuo qu 	工作区	c=1 d=0.818731 t=632
+gou 	够	c=1 d=0.806541 t=632
+guan li 	管理	c=1 d=0.680451 t=632
+guan li qi 	管理器	c=1 d=0.995012 t=632
+guan yong 	管用	c=1 d=0.995012 t=632
+gui ze 	规则	c=1 d=0.484325 t=632
+guo qu 	过去	c=1 d=0.67032 t=632
+hai 	还	c=3 d=1.56089 t=632
+hai shi 	还是	c=2 d=1.16089 t=632
+hai you 	还有	c=1 d=0.865022 t=632
+hao duo 	好多	c=1 d=0.767206 t=632
+hao fu za 	好复杂	c=1 d=1 t=632
+he 	和	c=6 d=4.87645 t=632
+he bing 	合并	c=3 d=2.73529 t=632
+he shi 	合适	c=1 d=0.980199 t=632
+hei pao 	黑袍	c=1 d=0.543351 t=632
+hou 	后	c=2 d=1.86712 t=632
+hou lai 	后来	c=1 d=0.597501 t=632
+hua 	话	c=1 d=0.496585 t=632
+hua wei 	华为	c=1 d=0.941765 t=632
+hui 	会	c=1 d=0.778801 t=632
+hui lai 	回来	c=1 d=0.527292 t=632
+ji cha 	极差	c=1 d=0.594521 t=632
+ji de 	记得	c=1 d=0.932394 t=632
+ji ge 	几个	c=1 d=0.839457 t=632
+ji qi 	机器	c=1 d=0.927743 t=632
+ji zhi 	机制	c=1 d=1 t=632
+jia 	加	c=1 d=0.960789 t=632
+jia dian 	加点	c=1 d=0.960789 t=632
+jia shang 	加上	c=1 d=0.501576 t=632
+jian 	间	c=1 d=0.790571 t=632
+jian mian 	见面	c=2 d=1.46346 t=632
+jie 	接	c=2 d=1.74765 t=632
+jie chu 	解除	c=6 d=3.59313 t=632
+jie guo 	结果	c=1 d=0.548812 t=632
+jie he 	结合	c=1 d=0.509156 t=632
+jie tu 	截图	c=1 d=0.909373 t=632
+jin lai 	进来	c=2 d=1.8883 t=632
+jin tian 	今天	c=1 d=0.38868 t=632
+jing yan 	经验	c=1 d=0.965605 t=632
+jiu 	就	c=4 d=2.43483 t=632
+jiu cuo 	纠错	c=1 d=0.965605 t=632
+jiu shi 	就是	c=2 d=0.97531 t=632
+ju ti 	具体	c=1 d=0.960789 t=632
+kai qi 	开启	c=2 d=1.29104 t=632
+kai tou 	开头	c=1 d=0.465334 t=632
+kan 	看	c=2 d=1.63176 t=632
+kan qi lai 	看起来	c=1 d=0.995012 t=632
+kan shou ji 	看手机	c=1 d=0.748264 t=632
+kong zhi duan 	控制端	c=2 d=1.56823 t=632
+kua ke 	夸克	c=1 d=0.554327 t=632
+kuai jie jian 	快捷键	c=1 d=0.900325 t=632
+kuang 	框	c=0 d=0.0436049 t=632
+lai 	来	c=3 d=2.35106 t=632
+le 	了	c=13 d=6.0688 t=632
+le ba 	了吧	c=1 d=0.798516 t=632
+lei 	雷	c=1 d=0.97531 t=632
+lei si 	类似	c=2 d=1.46686 t=632
+li 	里	c=14 d=6.51521 t=632
+li de 	里的	c=1 d=0.818731 t=632
+liang du 	亮度	c=1 d=0.923116 t=632
+lu 	路	c=1 d=0.694197 t=632
+lu shang 	路上	c=1 d=0.814647 t=632
+ma 	吗	c=6 d=3.02773 t=632
+mai le 	买了	c=1 d=0.535261 t=632
+me 	么	c=3 d=2.20548 t=632
+mei 	没	c=2 d=1.06228 t=632
+mei fa 	没法	c=1 d=0.891366 t=632
+mei kan 	没看	c=1 d=0.579842 t=632
+mei lai 	没来	c=1 d=0.955997 t=632
+mei sha 	没啥	c=1 d=0.697676 t=632
+mei shui 	没睡	c=1 d=0.802519 t=632
+mei xiao guo 	没效果	c=1 d=0.927743 t=632
+mei you 	没有	c=2 d=1.19334 t=632
+ming que 	明确	c=1 d=0.786628 t=632
+ming tian 	明天	c=1 d=0.733447 t=632
+mo hu 	模糊	c=3 d=2.22494 t=632
+mo hu yin 	模糊音	c=1 d=0.900325 t=632
+mo xing 	模型	c=2 d=0.865022 t=632
+mu qian 	目前	c=2 d=1.64979 t=632
+na 	拿	c=1 d=0.529935 t=632
+na bian 	那边	c=1 d=0.697676 t=632
+na ge 	哪个	c=1 d=0.369723 t=632
+na ge 	那个	c=1 d=0.625002 t=632
+na xie 	哪些	c=1 d=0.814647 t=632
+na xie 	那些	c=1 d=0.477114 t=632
+na yang 	那样	c=1 d=0.447088 t=632
+nan dao 	难道	c=1 d=0.774916 t=632
+ne 	呢	c=1 d=0.960789 t=632
+nei 	内	c=1 d=0.440432 t=632
+neng 	能	c=5 d=2.11591 t=632
+neng bu neng 	能不能	c=1 d=0.927743 t=632
+ni 	你	c=5 d=3.56524 t=632
+ni cao zuo 	你操作	c=1 d=0.873716 t=632
+ni hao 	你好	c=1 d=0.366045 t=632
+ni shi 	你是	c=1 d=0.367879 t=632
+ni shuo 	你说	c=1 d=0.937067 t=632
+ni zai 	你再	c=2 d=1.20809 t=632
+nong 	弄	c=3 d=1.9469 t=632
+nong wan 	弄完	c=1 d=0.650509 t=632
+o 	哦	c=0 d=0.0839457 t=632
+pai chu suo 	派出所	c=2 d=1.35822 t=632
+pei 	配	c=1 d=0.722527 t=632
+pei zhi 	配置	c=3 d=2.47918 t=632
+pin xie 	拼写	c=2 d=1.41736 t=632
+pin yin 	拼音	c=3 d=1.87954 t=632
+ping mu 	屏幕	c=2 d=1.81884 t=632
+ping tai 	平台	c=2 d=1.56041 t=632
+pu tong 	普通	c=2 d=1.87017 t=632
+qi lai 	起来	c=1 d=0.980199 t=632
+qi ta 	其他	c=1 d=0.852144 t=632
+qi yong 	启用	c=1 d=0.895834 t=632
+qian 	前	c=1 d=0.449329 t=632
+qian zhe 	前者	c=1 d=0.980199 t=632
+qiang zhe 	强者	c=1 d=0.985112 t=632
+qie huan 	切换	c=1 d=0.364219 t=632
+qing kuang 	情况	c=1 d=0.980199 t=632
+qu 	去	c=1 d=0.818731 t=632
+qu gong si 	去公司	c=1 d=0.683861 t=632
+que ren 	确认	c=1 d=0.755784 t=632
+ran hou 	然后	c=12 d=4.89293 t=632
+rang ta 	让它	c=1 d=0.932394 t=632
+ren gong 	人工	c=1 d=0.71177 t=632
+ri qi 	日期	c=1 d=0.379083 t=632
+ru 	如	c=2 d=1.48442 t=632
+ru guo 	如果	c=1 d=0.398519 t=632
+ru he 	如何	c=1 d=0.628135 t=632
+ruan jian 	软件	c=2 d=1.58267 t=632
+rui xing 	瑞幸	c=1 d=0.822835 t=632
+shan diao 	删掉	c=1 d=0.822835 t=632
+shang 	上	c=2 d=1.02703 t=632
+shang ban 	上班	c=1 d=0.810584 t=632
+shang jia 	商家	c=2 d=1.36688 t=632
+she bei 	设备	c=2 d=1.35784 t=632
+she bie 	射别	c=1 d=0.763379 t=632
+she zhi 	设置	c=1 d=0.869358 t=632
+shen me 	什么	c=1 d=0.895834 t=632
+shi 	时	c=1 d=0.421052 t=632
+shi 	是	c=8 d=3.28325 t=632
+shi bu shi 	是不是	c=3 d=2.14069 t=632
+shi de 	是的	c=1 d=0.494109 t=632
+shi jie 	世界	c=1 d=0.995012 t=632
+shi qing 	事情	c=1 d=0.970446 t=632
+shou ji 	手机	c=1 d=0.631284 t=632
+shu biao 	鼠标	c=1 d=0.980199 t=632
+shu chu 	输出	c=1 d=0.433874 t=632
+shu ru 	输入	c=3 d=1.33564 t=632
+shu ru fa 	输入法	c=1 d=0.980199 t=632
+shuo 	说	c=4 d=2.31128 t=632
+shuo xia zai 	说下载	c=1 d=0.621885 t=632
+sou gou 	搜狗	c=2 d=1.43491 t=632
+suo duan 	缩短	c=1 d=1 t=632
+suo zai 	所在	c=1 d=0.644036 t=632
+tai 	太	c=1 d=0.869358 t=632
+tao 	套	c=1 d=0.965605 t=632
+ti jiao 	提交	c=7 d=3.86544 t=632
+tiao 	调	c=1 d=0.909373 t=632
+tong 	同	c=1 d=0.798516 t=632
+tong guo 	通过	c=1 d=0.744532 t=632
+tou chuan 	透穿	c=1 d=0.97531 t=632
+tou ming 	透明	c=1 d=0.965605 t=632
+tou ming du 	透明度	c=1 d=0.955997 t=632
+tu ran 	突然	c=1 d=0.612626 t=632
+tui chu 	退出	c=2 d=1.81058 t=632
+tui kuan 	退款	c=2 d=1.3832 t=632
+wai jie 	外界	c=1 d=0.932394 t=632
+wan 	完	c=2 d=1.37205 t=632
+wan quan 	完全	c=1 d=0.946485 t=632
+wan shang 	晚上	c=2 d=1.13119 t=632
+wang niao 	网鸟	c=1 d=0.771052 t=632
+wei sha 	为啥	c=2 d=1.27827 t=632
+wei zhi 	位置	c=2 d=1.52264 t=632
+wen jian 	文件	c=1 d=0.99005 t=632
+wen ti 	问题	c=2 d=1.27812 t=632
+wo 	我	c=7 d=2.91837 t=632
+wo de 	我的	c=1 d=0.806541 t=632
+wo ken ding 	我肯定	c=1 d=0.985112 t=632
+wo xiang 	我想	c=1 d=0.416862 t=632
+wo you 	我又	c=1 d=0.612626 t=632
+wu song 	雾凇	c=4 d=2.5639 t=632
+wu yu 	无语	c=1 d=0.752014 t=632
+xi tong 	系统	c=1 d=0.67368 t=632
+xia 	下	c=13 d=5.24962 t=632
+xia bian 	下边	c=2 d=1.83739 t=632
+xia yi bu 	下一步	c=1 d=0.637628 t=632
+xia zai 	下载	c=0 d=0.0618783 t=632
+xian 	先	c=1 d=0.752014 t=632
+xian qing yi zhi 	闲情逸致	c=1 d=1 t=632
+xian shi 	显示	c=1 d=0.955997 t=632
+xian su 	限速	c=1 d=0.687289 t=632
+xian xiang 	现象	c=1 d=0.904837 t=632
+xian yu 	闲鱼	c=1 d=0.537944 t=632
+xian zai 	现在	c=4 d=2.03387 t=632
+xiang 	像	c=4 d=2.19918 t=632
+xiang dao 	想到	c=1 d=0.960789 t=632
+xiang dui 	相对	c=1 d=0.873716 t=632
+xiang le 	想了	c=1 d=0.810584 t=632
+xiang mu 	项目	c=1 d=0.965605 t=632
+xiang su 	像素	c=1 d=0.909373 t=632
+xiao guo 	效果	c=1 d=0.923116 t=632
+xin yong 	信用	c=1 d=0.582748 t=632
+xing wei 	行为	c=1 d=0.451581 t=632
+xiu gai 	修改	c=1 d=0.373439 t=632
+xu qiu 	需求	c=1 d=0.790571 t=632
+xu yao 	需要	c=1 d=0.66365 t=632
+xuan ze 	选择	c=1 d=0.985112 t=632
+yao 	要	c=1 d=0.951229 t=632
+ye dei 	也得	c=1 d=0.810584 t=632
+yi 	以	c=1 d=0.951229 t=632
+yi bian 	一遍	c=1 d=0.882497 t=632
+yi chu 	移除	c=1 d=0.995012 t=632
+yi ge 	一个	c=2 d=1.15138 t=632
+yi hui 	一会	c=1 d=0.680451 t=632
+yi kan 	一看	c=1 d=0.588605 t=632
+yi qi 	一起	c=1 d=0.516851 t=632
+yi tai 	一台	c=1 d=0.759572 t=632
+ying gai 	应该	c=1 d=0.474734 t=632
+ying wen 	英文	c=3 d=1.13895 t=632
+ying yao 	硬要	c=1 d=0.66365 t=632
+yong 	用	c=1 d=0.752014 t=632
+you 	又	c=2 d=1.0326 t=632
+you 	有	c=2 d=1.82197 t=632
+you bian 	右边	c=2 d=1.81449 t=632
+you ge 	有个	c=1 d=0.955997 t=632
+you shi 	又是	c=1 d=0.923116 t=632
+yu qi 	预期	c=1 d=0.460704 t=632
+yuan 	原	c=1 d=0.904837 t=632
+yuan yin 	原因	c=1 d=0.937067 t=632
+yue le 	约了	c=1 d=0.729789 t=632
+yun ban gong 	云办公	c=1 d=0.628135 t=632
+zai 	再	c=3 d=1.54162 t=632
+zai 	在	c=3 d=1.43835 t=632
+zai ne me 	在呢么	c=1 d=0.927743 t=632
+zao shang 	早上	c=1 d=0.97531 t=632
+zen me 	怎么	c=7 d=3.66529 t=632
+zhe 	这	c=4 d=2.18526 t=632
+zhe ge 	这个	c=4 d=2.74435 t=632
+zhe me 	这么	c=1 d=0.99005 t=632
+zhe xie 	这些	c=1 d=0.839457 t=632
+zhe zhong 	这种	c=2 d=1.32213 t=632
+zhen de 	真的	c=1 d=0.970446 t=632
+zhi chi 	支持	c=1 d=0.970446 t=632
+zhi ding 	置顶	c=0 d=0.0865022 t=632
+zhi ding le 	置顶了	c=1 d=0.869358 t=632
+zhi hou 	之后	c=3 d=1.68253 t=632
+zhi jie 	直接	c=1 d=0.431711 t=632
+zhi lei 	之类	c=1 d=0.985112 t=632
+zhi lian 	直连	c=1 d=0.491644 t=632
+zhi qian 	之前	c=6 d=2.15761 t=632
+zhi xing 	执行	c=1 d=0.802519 t=632
+zhi yao 	只要	c=1 d=0.831104 t=632
+zhi you 	只有	c=1 d=0.831104 t=632
+zhong 	中	c=2 d=1.90284 t=632
+zhong jian 	中间	c=1 d=0.377192 t=632
+zhong wen 	中文	c=1 d=0.400517 t=632
+zhong zi 	种子	c=1 d=0.565525 t=632
+zhu chu 	住处	c=1 d=0.640824 t=632
+zhu shi 	注释	c=1 d=0.794534 t=632
+zhuang 	装	c=1 d=0.955997 t=632
+zhuang feng mai sha 	装疯卖傻	c=1 d=0.574072 t=632
+zhuang zi 	庄子	c=1 d=0.65377 t=632
+zhuo mian 	桌面	c=2 d=1.68316 t=632
+zi dong 	自动	c=2 d=0.986448 t=632
+zi liao 	资料	c=1 d=0.995012 t=632
+zi mu 	字母	c=1 d=0.631284 t=632
+zi xi 	仔细	c=2 d=1.26358 t=632
+zi yuan 	资源	c=1 d=0.546074 t=632
+zi zi xi xi 	仔仔细细	c=1 d=0.918512 t=632
+zong jie 	总结	c=1 d=0.891366 t=632
+zou 	走	c=1 d=0.489192 t=632
+zui ding 	最顶	c=1 d=0.937067 t=632
+zui jin 	最近	c=2 d=1.67029 t=632
+zui xin 	最新	c=1 d=0.774916 t=632
+一跨 	yi kua	c=0 d=0 t=632
+下顾南西 	xia gu nan xi	c=0 d=0 t=632
+不哟 	bu yo	c=0 d=0 t=632
+不外界 	bu wai jie	c=0 d=0 t=632
+不安群 	bu an qun	c=0 d=0 t=632
+不帮 	bu bang	c=0 d=0 t=632
+不指数 	bu zhi shu	c=0 d=0 t=632
+不旁 	bu pang	c=0 d=0 t=632
+专用用户 	zhuan yong yong hu	c=0 d=0 t=632
+个呕呕见 	ge ou ou jian	c=0 d=0 t=632
+为提交 	wei ti jiao	c=0 d=0 t=632
+主管你 	zhu guan ni	c=0 d=0 t=632
+么次 	me ci	c=0 d=0 t=632
+之后哦 	zhi hou o	c=0 d=0 t=632
+之类你 	zhi lei ni	c=0 d=0 t=632
+也价格 	ye jia ge	c=0 d=0 t=632
+也加到 	ye jia dao	c=0 d=0 t=632
+买当 	mai dang	c=0 d=0 t=632
+了里 	le li	c=0 d=0 t=632
+从远端 	cong yuan duan	c=0 d=0 t=632
+仙子按 	xian zi an	c=0 d=0 t=632
+以谁 	yi shei	c=0 d=0 t=632
+但概念 	dan gai nian	c=0 d=0 t=632
+低丧父 	di sang fu	c=0 d=0 t=632
+你为啥 	ni wei sha	c=0 d=0 t=632
+你书 	ni shu	c=0 d=0 t=632
+你仔细 	ni zi xi	c=0 d=0 t=632
+你改完 	ni gai wan	c=0 d=0 t=632
+你根据 	ni gen ju	c=0 d=0 t=632
+你没用 	ni mei yong	c=0 d=0 t=632
+你看下 	ni kan xia	c=0 d=0 t=632
+你研究 	ni yan jiu	c=0 d=0 t=632
+你西恩 	ni xi en	c=0 d=0 t=632
+你西欧是 	ni xi ou shi	c=0 d=0 t=632
+你重新 	ni chong xin	c=0 d=0 t=632
+你非 	ni fei	c=0 d=0 t=632
+你靠 	ni kao	c=0 d=0 t=632
+侧绿 	ce lv	c=0 d=0 t=632
+侵入是 	qin ru shi	c=0 d=0 t=632
+先看下 	xian kan xia	c=0 d=0 t=632
+全显示 	quan xian shi	c=0 d=0 t=632
+公司哦 	gong si o	c=0 d=0 t=632
+内哦能够 	nei o neng gou	c=0 d=0 t=632
+凑够和 	cou gou he	c=0 d=0 t=632
+凡尘米 	fan chen mi	c=0 d=0 t=632
+加上能够 	jia shang neng gou	c=0 d=0 t=632
+勤快光 	qin kuai guang	c=0 d=0 t=632
+卡尼西安 	ka ni xi an	c=0 d=0 t=632
+去搜搜哦 	qu sou sou o	c=0 d=0 t=632
+参数你 	can shu ni	c=0 d=0 t=632
+参通过 	cen tong guo	c=0 d=0 t=632
+及忒 	ji tei	c=0 d=0 t=632
+反正功能 	fan zheng gong neng	c=0 d=0 t=632
+发连 	fa lian	c=0 d=0 t=632
+同级目录 	tong ji mu lu	c=0 d=0 t=632
+启动太 	qi dong tai	c=0 d=0 t=632
+周那么 	zhou na me	c=0 d=0 t=632
+哦嗯 	o ng	c=0 d=0 t=632
+哦都市 	o du shi	c=0 d=0 t=632
+啥跑止呕 	sha pao zhi ou	c=0 d=0 t=632
+外界屏幕 	wai jie ping mu	c=0 d=0 t=632
+外部截屏 	wai bu jie ping	c=0 d=0 t=632
+太🌿 	tai cao	c=0 d=0 t=632
+好嗨哟 	hao hai yo	c=0 d=0 t=632
+姑姑嘎嘎 	gu gu ga ga	c=0 d=0 t=632
+孤儿侧 	gu er ce	c=0 d=0 t=632
+学会刚 	xue hui gang	c=0 d=0 t=632
+尊需 	zun xu	c=0 d=0 t=632
+就版本 	jiu ban ben	c=0 d=0 t=632
+巍峨当 	wei e dang	c=0 d=0 t=632
+床哭 	chuang ku	c=0 d=0 t=632
+建立啊 	jian li a	c=0 d=0 t=632
+律动 	lv dong	c=0 d=0 t=632
+快捷键按 	kuai jie jian an	c=0 d=0 t=632
+我到手 	wo dao shou	c=0 d=0 t=632
+我昨晚 	wo zuo wan	c=0 d=0 t=632
+我老家 	wo lao jia	c=0 d=0 t=632
+我输入 	wo shu ru	c=0 d=0 t=632
+我问问 	wo wen wen	c=0 d=0 t=632
+我验证 	wo yan zheng	c=0 d=0 t=632
+所以点 	suo yi dian	c=0 d=0 t=632
+所属权利 	suo shu quan li	c=0 d=0 t=632
+所每 	suo mei	c=0 d=0 t=632
+扮演特 	ban yan te	c=0 d=0 t=632
+投入表 	tou ru biao	c=0 d=0 t=632
+报玻璃 	bao bo li	c=0 d=0 t=632
+按抓按 	an zhua an	c=0 d=0 t=632
+挺品 	ting pin	c=0 d=0 t=632
+接屏幕 	jie ping mu	c=0 d=0 t=632
+接纳么 	jie na me	c=0 d=0 t=632
+提交澳 	ti jiao ao	c=0 d=0 t=632
+插补进去 	cha bu jin qu	c=0 d=0 t=632
+摩托老 	mo tuo lao	c=0 d=0 t=632
+改西安 	gai xi an	c=0 d=0 t=632
+放鬓 	fang bin	c=0 d=0 t=632
+新分支 	xin fen zhi	c=0 d=0 t=632
+新提交 	xin ti jiao	c=0 d=0 t=632
+新窗口 	xin chuang kou	c=0 d=0 t=632
+无相应 	wu xiang ying	c=0 d=0 t=632
+时间戳 	shi jian chuo	c=0 d=0 t=632
+是激昂无 	shi ji ang wu	c=0 d=0 t=632
+最右侧 	zui you ce	c=0 d=0 t=632
+最旁 	zui pang	c=0 d=0 t=632
+最胖 	zui pang	c=0 d=0 t=632
+有图标 	you tu biao	c=0 d=0 t=632
+有图标而 	you tu biao er	c=0 d=0 t=632
+末热量 	mo re liang	c=0 d=0 t=632
+本机器 	ben ji qi	c=0 d=0 t=632
+本纪其 	ben ji qi	c=0 d=0 t=632
+来弄 	lai nong	c=0 d=0 t=632
+架子啊 	jia zi a	c=0 d=0 t=632
+每我 	mei wo	c=0 d=0 t=632
+每提交 	mei ti jiao	c=0 d=0 t=632
+比亚大 	bi ya da	c=0 d=0 t=632
+比殴打 	bi ou da	c=0 d=0 t=632
+比起锋芒 	bi qi feng mang	c=0 d=0 t=632
+没咋 	mei za	c=0 d=0 t=632
+没大碍 	mei da ai	c=0 d=0 t=632
+没有钻杆 	mei you zuan gan	c=0 d=0 t=632
+没看大 	mei kan da	c=0 d=0 t=632
+没配 	mei pei	c=0 d=0 t=632
+洗涤呢 	xi di ne	c=0 d=0 t=632
+洛宝 	luo bao	c=0 d=0 t=632
+流量奶骑 	liu liang nai qi	c=0 d=0 t=632
+清苦能够 	qing ku neng gou	c=0 d=0 t=632
+滚里 	gun li	c=0 d=0 t=632
+灭大 	mie da	c=0 d=0 t=632
+热爱后 	re ai hou	c=0 d=0 t=632
+然欧 	ran ou	c=0 d=0 t=632
+瑜伽裤 	yu jia ku	c=0 d=0 t=632
+用下来 	yong xia lai	c=0 d=0 t=632
+用出 	yong chu	c=0 d=0 t=632
+用岛国 	yong dao guo	c=0 d=0 t=632
+用拥吻 	yong yong wen	c=0 d=0 t=632
+用改革 	yong gai ge	c=0 d=0 t=632
+盒盖休眠 	he gai xiu mian	c=0 d=0 t=632
+盲从才 	mang cong cai	c=0 d=0 t=632
+直接改 	zhi jie gai	c=0 d=0 t=632
+省侧 	sheng ce	c=0 d=0 t=632
+看下啊 	kan xia a	c=0 d=0 t=632
+瞎子啊 	xia zi a	c=0 d=0 t=632
+私房拍摄 	si fang pai she	c=0 d=0 t=632
+等不料 	deng bu liao	c=0 d=0 t=632
+等以后 	deng yi hou	c=0 d=0 t=632
+算日哦嗯 	suan ri o ng	c=0 d=0 t=632
+系统容 	xi tong rong	c=0 d=0 t=632
+红内 	hong nei	c=0 d=0 t=632
+美欧去 	mei ou qu	c=0 d=0 t=632
+群殴他 	qun ou ta	c=0 d=0 t=632
+老判断 	lao pan duan	c=0 d=0 t=632
+而机器 	er ji qi	c=0 d=0 t=632
+而秘法 	er mi fa	c=0 d=0 t=632
+自动个 	zi dong ge	c=0 d=0 t=632
+自爱吸纳 	zi ai xi na	c=0 d=0 t=632
+自爱那 	zi ai na	c=0 d=0 t=632
+袍子啊 	pao zi a	c=0 d=0 t=632
+被错 	bei cuo	c=0 d=0 t=632
+装行 	zhuang hang	c=0 d=0 t=632
+设别 	she bie	c=0 d=0 t=632
+设遏制 	she e zhi	c=0 d=0 t=632
+请跨国你 	qing kua guo ni	c=0 d=0 t=632
+路径测测 	lu jing ce ce	c=0 d=0 t=632
+车规 	che gui	c=0 d=0 t=632
+这今儿个 	zhe jin er ge	c=0 d=0 t=632
+这呀 	zhe ya	c=0 d=0 t=632
+连杀那个 	lian sha na ge	c=0 d=0 t=632
+部以来 	bu yi lai	c=0 d=0 t=632
+部澳 	bu ao	c=0 d=0 t=632
+部队哦 	bu dui o	c=0 d=0 t=632
+都修复 	dou xiu fu	c=0 d=0 t=632
+都加上 	dou jia shang	c=0 d=0 t=632
+都提交 	dou ti jiao	c=0 d=0 t=632
+配一下 	pei yi xia	c=0 d=0 t=632
+配早 	pei zao	c=0 d=0 t=632
+酷鸭 	ku ya	c=0 d=0 t=632
+醉茄子 	zui qie zi	c=0 d=0 t=632
+里里边 	li li bian	c=0 d=0 t=632
+问大概 	wen da gai	c=0 d=0 t=632
+需阿兵哥 	xu a bing ge	c=0 d=0 t=632
+饭困 	fan kun	c=0 d=0 t=632
+龙慢 	long man	c=0 d=0 t=632
+📚入 	shu ru	c=0 d=0 t=632
