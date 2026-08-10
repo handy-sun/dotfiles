@@ -54,6 +54,7 @@ binds {
 
     // Noctalia controls
     Mod+Return{ spawn-sh "noctalia-shell ipc call launcher toggle"; }
+    Mod+Alt+V hotkey-overlay-title="Clipboard history: Noctalia" { spawn-sh "noctalia-shell ipc call launcher clipboard"; }
     Mod+Shift+L hotkey-overlay-title="Lock the Screen: noctalia-shell lock" { spawn-sh "noctalia-shell ipc call lockScreen lock"; }
     Mod+Space { spawn-sh "noctalia-shell ipc call settings toggle"; }
     Mod+Shift+Space { spawn-sh "noctalia-shell ipc call controlCenter toggle"; }
