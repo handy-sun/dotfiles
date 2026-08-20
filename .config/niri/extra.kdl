@@ -40,8 +40,6 @@ hotkey-overlay {
 prefer-no-csd
 
 workspace "1" { }
-workspace "2" { }
-workspace "3" { }
 
 /-window-rule {
     geometry-corner-radius 12
@@ -72,13 +70,6 @@ binds {
     // Switches focus between the current and the previous workspace.
     Mod+Tab { focus-workspace-previous; }
 }
-
-// cursor {
-//     xcursor-theme "BreezeX-RosePine-Linux"
-//     xcursor-size 24
-//     hide-when-typing
-//     hide-after-inactive-ms 10000
-// }
 
 layer-rule {
     match namespace="^noctalia-overview*"
