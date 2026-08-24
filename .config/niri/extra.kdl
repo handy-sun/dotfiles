@@ -67,6 +67,10 @@ binds {
 
     XF86MonBrightnessUp allow-when-locked=true { spawn-sh "noctalia-shell ipc call brightness increase"; }
     XF86MonBrightnessDown allow-when-locked=true { spawn-sh "noctalia-shell ipc call brightness decrease"; }
+
+    // Search and focus a window with fuzzel.
+    Mod+W hotkey-overlay-title="Window switcher: fuzzel" { spawn "niri-window-picker"; }
+
     // Switches focus between the current and the previous workspace.
     Mod+Tab { focus-workspace-previous; }
 }
