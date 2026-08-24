@@ -12,7 +12,7 @@ play = [
     { run = "mpv %s", orphan = true } ,
 ]
 edit = [
-    { run = '$EDITOR "$@"', block = true, for = "unix" },
+    { run = '$EDITOR %s1', block = true, for = "unix" },
     { run = "%EDITOR% %*",  block = true, for = "windows" },
 ]
 open = [
