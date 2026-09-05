@@ -4,13 +4,14 @@ global {
     so_mark_from_dae: 0
     log_level: info
     disable_waiting_network: true
-    # lan_interface: auto
+    # lan_interface: br-lan
     wan_interface: auto
     auto_config_kernel_parameter: true
     tcp_check_url: 'http://cp.cloudflare.com,1.1.1.1,2606:4700:4700::1111'
     tcp_check_http_method: HEAD
     udp_check_dns: 'dns.google.com:53,8.8.8.8,2001:4860:4860::8888'
-    check_interval: 600s
+    ## Short interval so the group recovers quickly when sing-box restarts.
+    check_interval: 15s
     check_tolerance: 40ms
     dial_mode: domain+
     allow_insecure: false
@@ -49,12 +50,12 @@ dns {
 }
 
 node {
-    singb: 'socks5://localhost:2334'
+    local-singbox: 'socks5://127.0.0.1:2334'
 }
 
 group {
     OK {
-        filter: name(singb)
+        filter: name(local-singbox)
         policy: min_moving_avg
     }
 }
@@ -69,7 +70,9 @@ routing {
         systemd-networkd,
         zerotier-one,
         tailscaled,
-        sing-box
+        speedtest-cli,
+        sing-box,
+        mihomo
     ) -> must_direct
 
     ## avoid tail netrwork traffic proxyed by dae
@@ -109,6 +112,9 @@ routing {
         suffix: alipay.com,
         suffix: pipio.io,
         suffix: sub1.all--green.com,
+        suffix: pipio.io,
+        suffix: zhima.world,
+        suffix: speedtest.net,
         full: aur.archlinux.org,
         keyword: lcf.im,
         regex: '\.rs',
