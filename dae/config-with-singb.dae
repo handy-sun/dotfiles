@@ -81,8 +81,8 @@ routing {
     dip(geoip: private, geoip: cn) -> direct
     dip(224.0.0.0/3, 'ff00::/8') -> direct
     ## reinsvps public ip
-    dip(103.149.93.96/32) -> direct
-    dport(3478, 5201, 19302, 23301, 22101, 22102) -> direct
+    dip(103.149.93.96/32, 8.210.205.93/32) -> direct
+    dport(22, 3478, 5201, 19302, 21116, 22101, 22102, 23301) -> direct
 
     ipversion(6) -> block
     l4proto(udp) && dport(443) -> block
