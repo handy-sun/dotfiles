@@ -1,0 +1,5 @@
+[Icon Theme]
+Name=hicolor-plus
+Comment=Empty fallback theme: hicolor look first, breeze-dark fills white monochrome names
+Inherits=hicolor,breeze-dark
+Directories=
