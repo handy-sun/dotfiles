@@ -1,0 +1,256 @@
+include {
+    ./honk-subs.dae
+}
+
+global {
+    wan_interface: auto
+    # lan_interface: br-lan
+    log_level: info
+    dial_mode: domain++
+    auto_config_kernel_parameter: true
+    log_file: 'honk.log'
+    store_subscribe: true
+    nfqueue_enable: true
+
+    tcp_check_url: 'https://www.gstatic.com/generate_204'
+    tcp_check_http_method: HEAD
+    udp_check_dns: 'dns.google.com:53,8.8.8.8,2001:4860:4860::8888'
+    check_interval: 30s
+    check_tolerance: 40ms
+}
+
+dns {
+    ipversion_prefer: 4
+    use_host: true
+    client_subnet: auto
+    upstream {
+        alidns: 'https://223.5.5.5/dns-query?tls_server_name=dns.alidns.com' -> direct
+        googledns: 'https://8.8.8.8/dns-query?tls_server_name=dns.google' -> OK
+    }
+    routing {
+        request {
+            qname(geosite: geolocation-!cn) -> googledns
+            fallback: alidns
+        }
+        response {
+            upstream(googledns) -> accept
+            qname(geosite: private) -> accept
+            ip(geoip: cn) -> accept
+            fallback: googledns
+        }
+    }
+}
+
+group {
+    OK {
+        filter: subtag(sub-store) && !name(regex: 'kooya|test-entry|重置|剩余|到期')
+        policy: min_moving_avg
+    }
+
+    GAME-MAN {
+        filter: name('direct')
+        filter: subtag(sub-store)
+        policy: selector
+        default: 'direct'
+    }
+
+    AI {
+        filter: subtag(sub-store)
+        filter: group('OK')
+        policy: selector
+        default: 'OK'
+    }
+
+    MAN {
+        filter: subtag(sub-store)
+        filter: group('OK')
+        policy: selector
+        default: 'OK'
+    }
+}
+
+routing {
+    pname(dnsmasq, systemd-resolved) && l4proto(udp) && dport(53) -> direct(must)
+    pname(
+        NetworkManager,
+        systemd-networkd,
+        zerotier-one,
+        tailscaled,
+        speedtest-cli,
+        sing-box,
+        mihomo
+    ) -> direct(must)
+
+    dip(geoip: private, 224.0.0.0/3, 'ff00::/8') -> direct(must)
+
+    dip(100.64.0.0/10, 'fd7a:115c:a1e0::/48') -> direct
+
+    ## vps public ip
+    dip(103.149.93.96/32, 8.210.205.93/32, 119.167.100.180/32) -> direct
+    dport(22, 3478, 5201, 19302, 21116, 22101, 22102, 23301) -> direct
+
+    ipversion(6) -> block
+    # l4proto(udp) && dport(443) -> block
+    domain(geosite: category-ads-all, geosite: category-ads) -> block
+    domain(
+        full: dns.jd.com,
+        full: dns.weixin.qq.com,
+        full: dns.weixin.qq.com.cn,
+        full: httpdns-sc.aliyuncs.com
+    ) -> block
+
+    domain(suffix: tailscale.com) -> MAN
+
+    domain(
+        suffix: ushd.xmsl.org,
+        suffix: cf.gtlx.org,
+        suffix: mtalk.google.com,
+        suffix: askmanyai.cn,
+        suffix: codeberg.org,
+        suffix: godbolt.org,
+        suffix: locyanfrp.cn,
+        suffix: litiaotiao.cn,
+        suffix: cimbar.org,
+        suffix: exp-tas.com,
+        suffix: bytednsdoc.com,
+        suffix: testipv6.cn,
+        suffix: ip938.com,
+        suffix: 647792.xyz,
+        suffix: alipay.com,
+        suffix: pipio.io,
+        suffix: sub1.all--green.com,
+        suffix: next.zhima.world,
+        suffix: speedtest.net,
+        suffix: xiaoheihe.com,
+        suffix: taobao.com,
+        full: aur.archlinux.org,
+        keyword: lcf.im,
+        regex: '\.rs',
+        regex: '^stun\.*'
+    ) -> direct
+
+    ## game/patch download CDNs, manual list (originally from sukkaw's ruleset)
+    domain(
+        ## Steam
+        full: content-origin.steampowered.com,
+        full: edge.steam-dns.top.comcast.net,
+        suffix: content.steampowered.com,
+        suffix: steamcontent.com,
+        full: steam.apac.qtlglb.com,
+        full: steam.eca.qtlglb.com,
+        full: steam.naeu.qtlglb.com,
+        full: steam.ru.qtlglb.com,
+        full: steampipe.akamaized.net,
+        full: steampipe-kr.akamaized.net,
+        full: steampipe-partner.akamaized.net,
+        ## Epic
+        suffix: download.epicgames.com,
+        full: download2.epicgames.com,
+        full: download3.epicgames.com,
+        full: download4.epicgames.com,
+        full: epicgames-download1.akamaized.net,
+        full: fastly-download.epicgames.com,
+        full: egdownload.fastly-edge.com,
+        suffix: epicgamescdn.com,
+        ## Blizzard
+        suffix: cdn.blizzard.com,
+        full: dist.blizzard.com,
+        full: level3.blizzard.com,
+        full: blizzard.gcdn.cloudn.co.kr,
+        full: blzddist1-a.akamaihd.net,
+        full: blzddist2-a.akamaihd.net,
+        full: blzddist3-a.akamaihd.net,
+        full: blzddistkr1-a.akamaihd.net,
+        ## Xbox / Microsoft
+        full: download.xbox.com,
+        full: assets1.xboxlive.com,
+        full: assets2.xboxlive.com,
+        full: packagespc.xboxlive.com,
+        full: xvcf1.xboxlive.com,
+        full: xvcf2.xboxlive.com,
+        full: pf-cdn-content-prod.azureedge.net,
+        ## EA / Origin / Garena
+        suffix: cdn.ea.com,
+        suffix: download.dm.origin.com,
+        full: origin-a.akamaihd.net,
+        full: dlgarenanow-a.akamaihd.net,
+        ## GOG
+        full: gog-cdn-fastly.gog.com,
+        full: gog-cdn-fastly-cp77.gog.com,
+        ## Nintendo / PlayStation / Ubisoft
+        suffix: cdn.nintendo.net,
+        suffix: wup.eshop.nintendo.net,
+        suffix: wup.shop.nintendo.net,
+        suffix: dl.playstation.net,
+        suffix: cdn.ubi.com,
+        ## Riot / Bethesda / Rockstar / SWTOR / Hikari Field
+        suffix: dyn.riotcdn.net,
+        suffix: content.cdp.bethesda.net,
+        suffix: download.cdp.bethesda.net,
+        full: gamedownloads-rockstargames-com.akamaized.net,
+        full: cdn-patch.swtor.com,
+        full: client.hikarifield.co.jp,
+        full: download.hikarifield.co.jp,
+        # upstream ruleset watermark
+        suffix: 7h1s_rul35et_i5_mad3_by_5ukk4w-ruleset.skk.moe
+    ) -> GAME-MAN
+
+    ## community game categories complementing the manual list
+    ## (geosite must stay a separate rule: mixing it with suffix/full in one domain() is AND, not OR)
+    domain(geosite: category-game-platforms-download, category-games, category-games-cn) -> GAME-MAN
+
+    dip(geoip: cn) -> direct
+    domain(
+        geosite: cn,
+        geosite: geolocation-cn,
+        geosite: category-scholar-!cn,
+        geosite: category-scholar-cn
+    ) -> direct
+
+    domain(geosite: youtube, geosite: telegram) -> MAN
+
+    ## AI
+    domain(
+        ## OpenAI
+        geosite: category-ai-!cn,
+        keyword: openai,
+        keyword: chatgpt,
+        ## Anthropic
+        suffix: anthropic.com,
+        suffix: claude.ai,
+        suffix: claudeusercontent.com,
+        ## Gemini
+        keyword: colab,
+        suffix: bard.google.com,
+        suffix: deepmind.com,
+        suffix: deepmind.google,
+        suffix: gemini.google.com,
+        suffix: generativeai.google,
+        suffix: proactivebackend-pa.googleapis.com,
+        suffix: apis.google.com,
+        ##  Others
+        suffix: sora.com,
+        suffix: grok.com,
+        suffix: pixpix.com
+    ) -> AI
+
+    fallback: MAN
+}
+
+experimental {
+    clash_api {
+        external_controller: '0.0.0.0:9090'
+        external_ui: 'ui'
+        secret: ''
+        default_mode: 'Rule'
+    }
+    cache_file {
+        enabled: true
+        path: 'cache.db'
+        cache_id: ''
+        store_fakeip: false
+        store_dns: false
+    }
+}
+
+# vim: set ft=config:
