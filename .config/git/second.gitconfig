@@ -1,0 +1,20 @@
+[user]
+    email = "sunqi@cyberguard.com.cn"
+    name = "sunqi"
+
+[core]
+    safecrlf = false
+
+[credential]
+    helper = manager
+    credentialStore = gpg
+    # credentialStore = secretservice
+
+[credential "http://tea.local"]
+    username = sunqi
+    provider = generic
+    allowUnsafeRemotes = true
+    useHttpPath = false
+    interactive = false
+
+# vim: set ft=gitconfig:

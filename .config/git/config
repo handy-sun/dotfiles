@@ -85,3 +85,6 @@
 [user]
 	email = "handy-sun@foxmail.com"
 	name = "sooncheer"
+
+[includeIf "gitdir:~/work/"]
+	path = "~/.config/git/second.gitconfig"
