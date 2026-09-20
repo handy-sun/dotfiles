@@ -1,5 +1,12 @@
 [Icon Theme]
 Name=hicolor-plus
-Comment=Empty fallback theme: hicolor look first, breeze-dark fills white monochrome names
-Inherits=hicolor,breeze-dark
-Directories=
+Comment=hicolor original look first, Papirus fills missing, breeze-dark last resort
+Inherits=hicolor,Papirus,breeze-dark
+Directories=apps
+
+[apps]
+Size=48
+Context=Applications
+Type=Scalable
+MinSize=8
+MaxSize=512
