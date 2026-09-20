@@ -48,7 +48,7 @@ workspace "1" { }
 
 binds {
     Mod+Shift+S { spawn "mark-shot"; }
-    Mod+Shift+T hotkey-overlay-title="Open a Terminal: wezterm" { spawn "wezterm"; }
+    Mod+Shift+T hotkey-overlay-title="Open a Terminal: kitty" { spawn "kitty"; }
 
     // Noctalia controls (v5 `noctalia msg` IPC)
     Mod+Return{ spawn-sh "noctalia msg panel-toggle launcher"; }
@@ -56,7 +56,7 @@ binds {
     Mod+Shift+L hotkey-overlay-title="Lock the Screen: noctalia session lock" { spawn-sh "noctalia msg session lock"; }
     Mod+Space { spawn-sh "noctalia msg settings-toggle"; }
     Mod+Shift+Space { spawn-sh "noctalia msg panel-toggle control-center"; }
-    // TODO: rebind to the chosen music plugin's panel once it is picked
+
     Mod+Shift+M { spawn-sh "noctalia msg panel-toggle control-center media"; }
 
     // Noctalia Media Controls
