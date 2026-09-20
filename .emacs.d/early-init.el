@@ -23,12 +23,18 @@
 ;; Prevent package.el from auto-installing (we use straight.el)
 (setq package-enable-at-startup nil)
 
-;; evil-collection-pdf calls `image-set-window-hscroll', which image-mode.el
-;; defines without an autoload, so each time the async native compiler
-;; rebuilds that file it pops a false "not known to be defined" warning.
-;; Skip native-compiling just that file; byte-code behaves the same.
+;; False-positive "not known to be defined" warnings from the async native
+;; compiler, which compiles each file in isolation:
+;; - evil-collection-pdf calls `image-set-window-hscroll', which image-mode.el
+;;   defines without an autoload.
+;; - general.el's `general-evil-setup' references `general-nmap' & co. via
+;;   `#'', but those are only defalias'd at runtime by earlier
+;;   `general-create-definer' expansions in the same function (conf/evil.el
+;;   calls it with short-names).
+;; Skip native-compiling these files; bytecode behaves identically.
 (with-eval-after-load "comp-run"
-  (add-to-list 'native-comp-jit-compilation-deny-list "evil-collection-pdf\\.el"))
+  (dolist (re '("evil-collection-pdf\\.el\\'" "general\\.el\\'"))
+    (add-to-list 'native-comp-jit-compilation-deny-list re)))
 
 (provide 'early-init)
 ;;; early-init.el ends here
