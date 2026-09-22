@@ -53,6 +53,7 @@
 	diff = "delta"
 	log = "delta"
 	show = "delta"
+	tag = false
 
 [pull]
 	rebase = true
