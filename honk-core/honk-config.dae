@@ -17,8 +17,8 @@ global {
     udp_check_dns: 'dns.google.com:53,8.8.8.8,2001:4860:4860::8888'
     check_interval: 30s
     check_tolerance: 40ms
-}
 
+}
 dns {
     ipversion_prefer: 4
     use_host: true
@@ -71,11 +71,11 @@ group {
 
 routing {
     pname(dnsmasq, systemd-resolved) && l4proto(udp) && dport(53) -> direct(must)
+    pname(tailscaled) && !((l4proto(udp) || l4proto(tcp)) && dport(53)) -> direct(must)
     pname(
         NetworkManager,
         systemd-networkd,
         zerotier-one,
-        tailscaled,
         speedtest-cli,
         sing-box,
         mihomo
