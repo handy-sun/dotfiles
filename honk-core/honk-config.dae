@@ -86,8 +86,13 @@ routing {
         mihomo
     ) -> direct(must)
 
+    ## link-local (fe80::/10) must bypass the dialer: its socket cannot carry the scope zone, so plain direct would stall TCP (e.g. ssh root@fe80::..%if)
+    dip('fe80::/10') -> direct(must)
+    ## multicast/broadcast must bypass the dialer: its socket loses the outbound interface and multicast options (mDNS/SSDP)
+    dip(224.0.0.0/3, 'ff00::/8') -> direct(must)
+
     ## non-must keeps dns hijack: poisoned lan-router answers cannot bypass the dns module
-    dip(geoip: private, 224.0.0.0/3, 'ff00::/8') -> direct
+    dip(geoip: private) -> direct
 
     dip(100.64.0.0/10, 'fd7a:115c:a1e0::/48') -> direct
 
