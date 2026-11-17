@@ -68,3 +68,14 @@ desc = "sudo trash"
 on = ["R", "m"]
 run = "plugin sudo -- chmod"
 desc = "sudo chmod"
+
+## yazi-rs/plugins:zoom
+[[mgr.prepend_keymap]]
+on = ["+"]
+run = "plugin zoom 1"
+desc = "Zoom in the preview image"
+
+[[mgr.prepend_keymap]]
+on = ["-"]
+run = "plugin zoom -1"
+desc = "Zoom out the preview image"

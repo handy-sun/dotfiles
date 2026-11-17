@@ -6,6 +6,9 @@ scrolloff = 6
 [preview]
 wrap = "yes"
 tab_size = 4
+image_delay = 30
+max_width = 1200
+max_height = 1600
 
 [opener]
 play = [
