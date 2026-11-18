@@ -71,7 +71,7 @@ desc = "sudo chmod"
 
 ## yazi-rs/plugins:zoom
 [[mgr.prepend_keymap]]
-on = ["+"]
+on = ["="]
 run = "plugin zoom 1"
 desc = "Zoom in the preview image"
 
@@ -79,6 +79,18 @@ desc = "Zoom in the preview image"
 on = ["-"]
 run = "plugin zoom -1"
 desc = "Zoom out the preview image"
+
+## "-" now zooms, so symlink yanked files with "_" (preset had "_" for relative links)
+[[mgr.prepend_keymap]]
+on = ["_"]
+run = "link"
+desc = "Symlink the absolute path of yanked files"
+
+## Ctrl+- keeps the preset relative-link behaviour (needs extended keys / CSI u)
+[[mgr.prepend_keymap]]
+on = ["<C-->"]
+run = "link --relative"
+desc = "Symlink the relative path of yanked files"
 
 ## yazi-rs/plugins:toggle-pane
 [[mgr.prepend_keymap]]
