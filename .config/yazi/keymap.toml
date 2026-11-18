@@ -79,3 +79,9 @@ desc = "Zoom in the preview image"
 on = ["-"]
 run = "plugin zoom -1"
 desc = "Zoom out the preview image"
+
+## yazi-rs/plugins:toggle-pane
+[[mgr.prepend_keymap]]
+on = ["T"]
+run = "plugin toggle-pane max-preview"
+desc = "Maximize or restore the preview pane"
